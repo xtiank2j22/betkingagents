@@ -82,7 +82,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: rgba(42, 44, 57, 0.9);
+  background: #001041 !important;
 }
 
 #header.header-transparent {
@@ -346,6 +346,7 @@ h6 {
   position: relative;
   background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
   padding: 0;
+  margin-top: 5%;
 }
 
 #hero .carousel-container {
