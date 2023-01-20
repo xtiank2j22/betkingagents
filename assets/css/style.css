@@ -82,7 +82,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #001041 !important;
+  background: rgba(42, 44, 57, 0.9);
 }
 
 #header.header-transparent {
@@ -206,6 +206,13 @@ h6 {
   top: 100%;
   visibility: visible;
 }
+.navbar .getstarted, .navbar .getstarted:focus {
+  background: #2487ce;
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 4px;
+  color: #fff;
+}
 
 .navbar .dropdown .dropdown ul {
   top: 0;
@@ -246,7 +253,6 @@ h6 {
   .mobile-nav-toggle {
     display: block;
   }
-
   .navbar ul {
     display: none;
   }
@@ -346,9 +352,10 @@ h6 {
   position: relative;
   background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
   padding: 0;
+}
+.slider-head{
   margin-top: 5%;
 }
-
 #hero .carousel-container {
   display: flex;
   justify-content: center;
@@ -427,7 +434,9 @@ h6 {
   #hero .carousel-container {
     height: 90vh;
   }
-
+  .slider-head{
+    margin-top: 8%;
+  }
   #hero h2 {
     font-size: 28px;
   }
