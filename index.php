@@ -1,85 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Betking-agents</title>
-  <meta content="Betking-agents" name="description">
-  <meta content="betking" name="keywords">
-  <!-- Favicons -->
-  <link href="https://www.betkingforagents.com/images/favicon.jpg" rel="shortcut icon" type="image/x-icon">
-  <link href="https://www.betkingforagents.com/images/webclip.jpg" rel="apple-touch-icon">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <!-- Template Main CSS File -->
-  <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
-  <link href="assets/css/style.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
- <!-- ======= Header ======= -->
- <header id="header" class="fixed-top">
-  <div class="container d-flex align-items-center justify-content-between pt-10">
-   <!--- <h1 class="logo"><a href="index.html">OnePage</a></h1>-->
-    <!-- Uncomment below if you prefer to use an image logo -->
-  <a href="index.html" class="logo"><img src="https://dl.dropboxusercontent.com/s/ts99fjz7nblro4h/logo1.png?dl=0" alt="" class="img-fluid"></a>
-    <nav id="navbar" class="navbar ">
-      <ul>
-        <li><a class="nav-link scrollto active" href="#">Home</a></li>
-        <li><a class="nav-link scrollto" href="#">Become an Agent</a></li>
-        <li><a class="nav-link scrollto" href="#">Tutoria</a></li>
-        <li><a class="nav-link scrollto o" href="#">Faq</a></li>
-        <li><a class="nav-link scrollto" href="#">Blog</a></li>
-        <li><a class="nav-link scrollto" href="#">Help</a></li>
-        <li><a class="getstarted scrollto font-5" href="#"> <span class="fas fa-user"> </span> Join Now</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
-  </div>
-</header><!-- End Header -->
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-end align-items-center slider-head">
-    <!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://dl.dropbox.com/s/782owl4t0y0pyib/MISC%20CO4.webp?dl=0" width="100%" alt="become agent, educate our new">
-    </div>
-    <!-- The slideshow/carouse2 -->
-    <div class="carousel-item">
-      <img src="https://dl.dropboxusercontent.com/s/uoe81vu4l7y0l7w/MISC%20CO1.jpg?dl=0" width="100%" alt="betking agents,designed to give">   
-     </div>
-     <!-- The slideshow/carouse3 -->
-    <div class="carousel-item">
-      <img src="https://dl.dropboxusercontent.com/s/a3iiauefr6fa997/MISC%20CO7.jpg?dl=0" width="100%" alt="become agents,give necessary">    </div>
-  </div>
-  
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-  </div>
-</section><!-- End About Section -->
-
+  <!--===== head links --=====-->
+  <?php include_once 'include/header.php'; ?>
+     <!--===== Main Navbar--=====-->
+  <?php include_once 'include/main-nav.php'; ?>
+     <!--===== slider --=====-->
+  <?php include_once 'include/slider.php'; ?>
   <!-- ======= Services Section ======= -->
   <section id="services" class="services">
     <div class="container">
@@ -186,18 +110,31 @@
     </div>
   </div>
   </section>
-   <!-- ======= Cta Section ======= -->
-   <section id="cta" class="cta">
+   <!-- ======= Cta Section 1 ======= -->
+ <section id="cta" class="cta cta-desk">
+  <div class="container ">
+    <div class="d-flex flex-row p-l-r" data-aos="zoom-out">
+      <div class="d-flex col-6 ">
+        <h3 class="mt-2" ><i>Ready to join the kingdom?</i></h3>
+      </div>
+      <div class="d-flex col-6  ">
+        <a class="cta-btn align-middle text-bolder" href="#">APPLY NOW</a>
+      </div>
+    </div>
+    </div>
+  </section><!-- End Cta Section -->
+  <!-- ======= mobile Cta Section 1.2 ======= -->
+  <section id="cta" class="cta cta-mobile">
     <div class="container">
-      <div class="row" data-aos="zoom-out">
-        <div class="col-xs-12 col-sm-12 col-lg-9 text-center text-lg-start">
+      <div class="d-flex flex-column" data-aos="zoom-out">
+        <div class="d-flex ">
           <h3 class="mt-2" ><i>Ready to join the kingdom?</i></h3>
         </div>
-        <div class="col-xs-12 col-sm-12 col-lg-3 cta-btn-container text-center">
+        <div class="d-flex">
           <a class="cta-btn align-middle text-bolder" href="#">APPLY NOW</a>
         </div>
       </div>
-    </div>
+      </div>
   </section><!-- End Cta Section -->
   <section class="bg-skyblue"><!-- what we offer -->
     <div class="container">
@@ -245,12 +182,12 @@
             </div>
         </div>
         <div class="row bonus-row">
-          <div class="col-md-5 bonus-box firbox">
+          <div class="col-md-5 bonus-box firbox text-wrap">
             <div class="d-flex">
               <div class="col-2 pt-10">              
                 <img src="//d9hhrg4mnvzow.cloudfront.net/promo.betking.com/become-an-agent/2d38381d-ball_1000000000000000000028.png" alt="" loading="lazy" data-src-desktop-1x="//d9hhrg4mnvzow.cloudfront.net/promo.betking.com/become-an-agent/2d38381d-ball_1000000000000000000028.png" data-src-mobile-1x="//d9hhrg4mnvzow.cloudfront.net/promo.betking.com/become-an-agent/2d38381d-ball_1011011000000000000028.png" data-src-mobile-2x="//d9hhrg4mnvzow.cloudfront.net/promo.betking.com/become-an-agent/2d38381d-ball_1000000000000000000028.png" srcset="">
               </div>
-              <div class="col-10 pt-10 mb-3 box-pad">              
+              <div class="col-10 pt-10 mb-3 box-pad ">              
                 <span class="general-list-spansec"> <strong>Over</strong></span>
                 <strong><span class="naira">₦</span></strong><span class="general-list-spansec"><strong>50,000 monthly sportsbook bonus</strong></span>
               </div>
@@ -276,28 +213,27 @@
    
     <!-- ======= Features Section ======= -->
     <section id="features" class="features bg-skyblue">
-      <div class="container">
+      <div class="container our-goal">
         <div class="tab-content" data-aos="fade-up">
           <div class="tab-pane active show" id="tab-1">
             <div class="row">
-              <div class="col-lg-6 order-1 order-lg-1 mt-3 mt-lg-0">
-                <h3 class="header-offer"><strong>Our Goals, Vision and Mission </strong></h3>
+              <div class="col-lg-6 order-1 order-lg-1  mt-lg-0">
+                <h3 class="header-offer text-center mb-3"><strong>Our Goals, Vision and Mission </strong></h3>
                 <p class="fst-italic spanoffer">
                   This platform was designed to give necessary support, courage and educate our new Betking agents with additional benefits.
                 </p>
                 <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                  <li class="spanoffer"><i class="ri-check-double-line"></i> Betking is The best online sport betting website in Nigeria 2021.</li>
+                  <li class="spanoffer"><i class="ri-check-double-line"></i>  As the fastest growing betting company in Nigeria, betking is offering you the opportunity to own your our business by partnering with us.</li>
+                  <li class="spanoffer"><i class="ri-check-double-line"></i>Register with us today!</li>
                 </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
+                <p  class="spanoffer">
+                  Our help desk will be <strong>available 24/7 </strong>to provide you with all the necessary guideline needed to be a successful agent
                 </p>
               </div>
               <div class="col-lg-6 order-2 order-lg-2 text-center">
-                <img src="assets/img/features-1.png" alt="" class="img-fluid">
+                <iframe class="iframe-box" id="video" title="betking video" alt="agent betking, betking video" width="100%" height="315" src="https://dl.dropboxusercontent.com/s/6ravmryt5tzx6is/vid.mp4?dl=0" frameborder="0" allowfullscreen=""></iframe>
+            <p class="spanoffer">CLICK:<a id="play-video" href="Register" class="text-uppercase"> <strong>betkingagents</strong> </a> to become an agent today</p>
               </div>
             </div>
           </div>
@@ -315,99 +251,104 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
           <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
+          <li data-filter=".Colour-Identity">Colour Identity</li>
+          <li data-filter=".filter-card">Interrior View</li>
+          <li data-filter=".filter-web">Exterrior View</li>
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
+          <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <h4>Introduction</h4>
+              <p>About Betking</p>
+              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/wf42cmywhqlx6vw/cap2.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/wf42cmywhqlx6vw/cap2.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
+          <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/wdext4wu1fovunj/cap3.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <h4>Betking Paint Guild</h4>
+              <p>Betking</p>
+              <a href="https://dl.dropboxusercontent.com/s/wdext4wu1fovunj/cap3.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/08dhl5nca62hzvw/cap4.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card 2</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/08dhl5nca62hzvw/cap4.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/46v4i6ploz6bshg/cap5.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Web 2</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/46v4i6ploz6bshg/cap5.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
+          <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/o3cyxwwfwic8su6/cap6.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>App 3</h4>
               <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/o3cyxwwfwic8su6/cap6.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/irk7sxtmbhn2m2d/Cap7.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card 1</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/irk7sxtmbhn2m2d/Cap7.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/j43d7dp82wpwp26/cap8.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card 3</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/j43d7dp82wpwp26/cap8.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/t2q2ptyjynlwqbu/cap9.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web 3</h4>
+              <h4>Setup Directies</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/t2q2ptyjynlwqbu/cap9.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/f2u1rv2u9ad7bhh/cap10.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -429,7 +370,7 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>Plot 197, Adeleke Adedoyin Street Lagos NG, Off Kofo Abayomi St, Victoria Island 101241, Victoria Island</p>
               </div>
               <div class="email">
                 <i class="bi bi-envelope"></i>
@@ -439,7 +380,7 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+234 (081) 44324966</p>
               </div>
             </div>
           </div>
@@ -464,68 +405,38 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center text-bold"><button type="submit" class="font-5">Send Message</button></div>
             </form>
-
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
- <!-- ======= Cta Section ======= -->
- <section id="cta" class="cta">
-  <div class="container">
-    <div class="row" data-aos="zoom-out">
-      <div class="col-xs-12 col-sm-12 col-lg-9 text-center text-lg-start">
-        <h3 class="mt-2" ><i>Ready to join the kingdom?</i></h3>
-      </div>
-      <div class="col-xs-12 col-sm-12 col-lg-3 cta-btn-container text-center">
-        <a class="cta-btn align-middle text-bolder" href="#">APPLY NOW</a>
-      </div>
-    </div>
-  </div>
-</section><!-- End Cta Section -->
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>Selecao</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Selecao</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta cta-desk">
+          <div class="container ">
+            <div class="d-flex flex-row p-l-r" data-aos="zoom-out">
+              <div class="d-flex col-6 ">
+                <h3 class="mt-2" ><i>Ready to join the kingdom?</i></h3>
+              </div>
+              <div class="d-flex col-6  ">
+                <a class="cta-btn align-middle text-bolder" href="#">APPLY NOW</a>
+              </div>
+            </div>
+            </div>
+        </section><!-- End Cta Section desk2 -->
+        <!-- ======= mobile Cta Section 1.2 ======= -->
+        <section id="cta" class="cta cta-mobile">
+          <div class="container">
+            <div class="d-flex flex-column" data-aos="zoom-out">
+              <div class="d-flex ">
+                <h3 class="mt-2" ><i>Ready to join the kingdom?</i></h3>
+              </div>
+              <div class="d-flex">
+                <a class="cta-btn align-middle text-bolder" href="#">APPLY NOW</a>
+              </div>
+            </div>
+            </div>
+        </section><!-- End Cta Section -->
+    <!--===== footer and js links --=====-->
+  <?php include_once 'include/footer.php'; ?>
