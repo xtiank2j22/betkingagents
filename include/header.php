@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">-->
   <!-- Template Main CSS File -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
   <link href="assets/css/style-main.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

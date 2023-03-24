@@ -1,5 +1,11 @@
  <!-- ======= Hero Section ======= -->
  <section id="hero" class="d-flex flex-column justify-content-end align-items-center slider-head">
+ <div class="col-12 okiri">
+      <marquee behavior="scroll" direction="left"  class="marquee-text">
+      <i  class="fa fa-handshake-o shak-marquee"></i>
+    If you are looking for information on how to become a BetKing agent, Visit Betking agents website @ <a href="index.php"><i style="color:#1AFFFF;">www.betkingagents.com</i>, </a> on register to become an agent. Enjoy high commission, bonuses, support, training etc.
+      </marquee>
+    </div>
     <!-- Carousel -->
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
   <!-- Indicators/dots -->

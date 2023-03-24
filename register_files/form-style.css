@@ -1,0 +1,179 @@
+.form-wrapper {
+	overflow: hidden;
+	padding: 25px 0px;
+	margin-top: 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	border-top: 1px solid #eee;
+}
+.form-wrapper .form-group { margin-bottom: 20px; }
+.form-wrapper .form-group label span { color: #ff0000;}
+.form-wrapper .error { color: #ff0000; font-size: 13px; margin-top: 3px; }
+::-webkit-input-placeholder { font-size: 14px; }
+::-moz-placeholder { font-size: 14px; }
+:-ms-input-placeholder { font-size: 14px; }
+:-moz-placeholder { font-size: 14px; }
+/* LABEL */
+.form-wrapper .form-group label {
+	color: #000;
+	font-size: 13px;
+	font-weight: 700;
+	font-family: 'Roboto', sans-serif;
+	padding-bottom: 8px;
+}
+/* LABEL */
+/* INPUT */
+.form-wrapper .form-group input {
+    width: 95%;
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+	border: solid 1px #062164;
+    border-radius: 4px;
+}
+.form-wrapper .form-group input:focus { box-shadow: none; }
+/* INPUT */
+/* SELECT */
+.form-wrapper .form-group select {
+	width: 95%;
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+	border: solid 1px #062164;
+    border-radius: 4px;
+}
+.form-wrapper .form-group select:focus { box-shadow: none; }
+/* SELECT */
+/* TEXTAREA */
+.form-wrapper .form-group textarea {
+	width: 95%;
+	color: #000;
+	font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+	border: solid 1px #062164;
+	border-radius: 4px;
+	resize: none;
+}
+.form-wrapper .form-group textarea.landmark-textarea {height: 109px;}
+.form-wrapper .form-group textarea.shop-textarea {height: 125px;}
+.form-wrapper .form-group textarea:focus { box-shadow: none; }
+/* TEXTAREA */
+/* CHECKBOX */
+.form-wrapper .form-check input {
+	margin: 0px;
+	width: 15px;
+	height: 15px;
+}
+.form-wrapper .form-check label {
+	color: #000;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+}
+/* CHECKBOX */
+/* UPLOAD */
+.upload-box { overflow: hidden; padding: 0px; }
+.upload-box .disclamer-box{ margin-bottom: 10px; }
+.input-container {
+	max-width: 300px;
+	background-color: #EDEDED;
+	border: 1px solid #DFDFDF;
+	border-radius: 5px;
+	overflow: hidden;
+}
+input[type='file'] { 
+	/* display: none; */
+	position: absolute;
+	top: 60px;
+	left: 15px;
+	opacity: 0;
+}
+#real-input1-error, #real-input2-error {
+	position: absolute;
+	top: 70px;
+	left: 15px;
+	opacity: 0;
+}
+.file-info1, .file-info2 { 
+	font-size: 0.9em;
+	float: left;
+	padding-top: 10px;
+    padding-left: 5px;
+}
+.browse-btn1, .browse-btn2 {
+	-webkit-appearance: button;
+	cursor: pointer;
+	float: left;
+	background: #3558BD;
+	color: #fff;
+	min-height: 35px;
+	padding: 10px;
+	border: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	transition: all 0.3s ease-in-out;
+}
+.custom-upload-error1, 
+.custom-upload-error2 {
+	visibility: hidden;
+	padding-top: 3px;
+	color: #ff0000;
+	font-size: 13px;
+}
+.upload-info {
+	font-size: 12px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+	color: #191919;
+	padding-bottom: 4px;
+}
+.custom-visible { visibility: visible; }
+.custom-hidden { visibility: hidden; }
+.browse-btn1:hover, .browse-btn2:hover { background: rgba(6, 33, 100, 0.85); }
+.upload-disclamer-headline {
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	color: #191919;
+	margin-bottom: 5px;
+}
+.upload-disclamer-text {
+	font-size: 12px;
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+	color: #191919;
+}
+/* UPLOAD */
+/* BTN BOX */
+.btn-box { overflow: hidden; }
+.btn-box .reset-btn {
+	font-size: 16px;
+    background: red;
+    border: 0px;
+    color: #fff;
+    padding: 10px 20px;
+}
+.btn-box .submit-btn {
+	font-size: 16px;
+    background: green;
+    border: 0px;
+    color: #fff;
+    padding: 10px 20px;
+}
+.btn-box .submit-btn.submit-btn-disabled {
+	opacity: 0.3;
+}
+/* BTN BOX */
+
+/* Remove arrows from number inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

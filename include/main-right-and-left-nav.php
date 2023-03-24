@@ -1,5 +1,5 @@
-<section class=" mt-2">
-         <div class="container-fluid komp">
+<section class=" mt-2 ">
+         <div class="container-fluid mbot komp">
             <div class="title-section d-flex flex-row ">
                  <i class="text-white d-flex p-2" href="">Help & FAQs</i>
                   <i class="text-white d-flex p-2" href="">Sports Help</i>
@@ -8,7 +8,7 @@
      </section>
      <section class="right-barcontent">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row mobpt">
                 <div class=' col-md-2 pam pl-5'>
                      <div class="row">
                          <div class="col-md-12 left-barsub">

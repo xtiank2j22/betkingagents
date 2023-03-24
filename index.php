@@ -1,7 +1,7 @@
-  <!--===== head links --=====-->
+  <!--===== navbar head links --=====-->
   <?php include_once 'include/header.php'; ?>
      <!--===== Main Navbar--=====-->
-  <?php include_once 'include/main-nav.php'; ?>
+  <?php include 'include/main-nav.php'; ?>
      <!--===== slider --=====-->
   <?php include_once 'include/slider.php'; ?>
   <!-- ======= Services Section ======= -->
@@ -9,7 +9,7 @@
     <div class="container">
       <div class="section-title" data-aos="zoom-out">
         <h2>Services</h2>
-        <p>What we do offer</p>
+        <p>What we do</p>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6">
@@ -243,46 +243,43 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
         <div class="section-title" data-aos="zoom-out">
-          <h2>Portfolio</h2>
-          <p>What we've done</p>
+          <h2>Gallery</h2>
+          <p>BetKing Setup Gallery</p>
         </div>
-
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
           <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".Colour-Identity">Colour Identity</li>
-          <li data-filter=".filter-card">Interrior View</li>
-          <li data-filter=".filter-web">Exterrior View</li>
+          <li data-filter=".Colour-Identity">BetKing Experience</li>
+          <li data-filter=".exterrior-view">Exterrior View</li>
+          <li data-filter=".interrior-view">Interrior View</li>
         </ul>
-
         <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
+        <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
             <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Introduction</h4>
               <p>About Betking</p>
               <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="https://dl.dropboxusercontent.com/s/7mfxy33b5yzs8qb/cap1.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
             <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/wf42cmywhqlx6vw/cap2.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="https://dl.dropboxusercontent.com/s/wf42cmywhqlx6vw/cap2.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <h4>Betking Paint Guild</h4>
+              <a href="https://dl.dropboxusercontent.com/s/wf42cmywhqlx6vw/cap2.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Betking Paint Guild"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/08dhl5nca62hzvw/cap4.PNG?dl=0" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Betking Design</h4>
+              <a href="https://dl.dropboxusercontent.com/s/08dhl5nca62hzvw/cap4.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item exterrior-view">
             <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/wdext4wu1fovunj/cap3.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Betking Paint Guild</h4>
@@ -291,70 +288,47 @@
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/08dhl5nca62hzvw/cap4.PNG?dl=0" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="https://dl.dropboxusercontent.com/s/08dhl5nca62hzvw/cap4.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/46v4i6ploz6bshg/cap5.PNG?dl=0" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="https://dl.dropboxusercontent.com/s/46v4i6ploz6bshg/cap5.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item Colour-Identity">
-            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/o3cyxwwfwic8su6/cap6.PNG?dl=0" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="https://dl.dropboxusercontent.com/s/o3cyxwwfwic8su6/cap6.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/irk7sxtmbhn2m2d/Cap7.PNG?dl=0" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="https://dl.dropboxusercontent.com/s/irk7sxtmbhn2m2d/Cap7.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="col-lg-4 col-md-6 portfolio-item exterrior-view">
             <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/j43d7dp82wpwp26/cap8.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Card 3</h4>
-              <p>Card</p>
               <a href="https://dl.dropboxusercontent.com/s/j43d7dp82wpwp26/cap8.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item exterrior-view">
             <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/t2q2ptyjynlwqbu/cap9.PNG?dl=0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Setup Directies</h4>
-              <p>Web</p>
-              <a href="https://dl.dropboxusercontent.com/s/t2q2ptyjynlwqbu/cap9.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="https://dl.dropboxusercontent.com/s/f2u1rv2u9ad7bhh/cap10.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="https://dl.dropboxusercontent.com/s/t2q2ptyjynlwqbu/cap9.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Betking Paint Guild"><i class="bx bx-plus"></i></a>
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
+          <div class="col-lg-4 col-md-6 portfolio-item interrior-view">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/a2vh86dwur4pjse/cap12.PNG?dl=0" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Setup Directies</h4>
+              <a href="https://dl.dropboxusercontent.com/s/a2vh86dwur4pjse/cap12.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Betking Paint Guild"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item interrior-view">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/gezza9zvk4w7r0l/cap13.PNG?dl=0" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Setup Directies</h4>
+              <a href="https://dl.dropboxusercontent.com/s/gezza9zvk4w7r0l/cap13.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Betking Paint Guild"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item interrior-view">
+            <div class="portfolio-img"><img src="https://dl.dropboxusercontent.com/s/zkead7hqijzaja8/cap14.PNG?dl=0" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Setup Directies</h4>
+              <a href="https://dl.dropboxusercontent.com/s/zkead7hqijzaja8/cap14.PNG?dl=0" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Betking Paint Guild"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
         </div>
-
       </div>
     </section><!-- End Portfolio Section -->
     <!-- ======= Contact Section ======= -->

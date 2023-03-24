@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://kameleon-apps.com/sajtovi/betking/custom-web2lead/form.html?v=2.9.2 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./font-awesome.min.css">
+    <link href="./css(1)" rel="stylesheet">
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="./jquery-ui.css" rel="stylesheet">
+    <link href="./reset.css" rel="stylesheet">
+    <link href="./form-style.css" rel="stylesheet">
+    <script type="text/javascript" async="" src="./analytics.js"></script><script type="text/javascript" async="" src="./js(1)"></script><script gtm="GTM-T555QRZ" type="text/javascript" async="" src="./optimize.js"></script><script type="text/javascript" async="" src="./recaptcha__en.js" crossorigin="anonymous" integrity="sha384-rxGZvg8Gdn3mgkwZjiW/lYDbAOnTpSluTNQ2InCrzanOoXT6H/CMKNjLfpfo7x0s"></script><script async="" src="./gtm.js"></script><script>function trimBoth(str) { return jQuery.trim(str); } function setAllDependancyFieldsMapping() { var mapDependancyLabels = getMapDependenySelectValues(jQuery("[id='property(module)']").val(), "JSON_MAP_DEP_LABELS"); if (mapDependancyLabels) { for (var i = 0; i < mapDependancyLabels.length; i++) { var label = mapDependancyLabels[i]; var obj = document.forms['zsWebToCase_222550000020802179'][label]; if (obj) { setDependent(obj, true); } } } } function getMapDependenySelectValues(module, key) { var dependencyObj = jQuery.parseJSON(jQuery("[id='dependent_field_values_" + module + "']").val()); if (dependencyObj == undefined) { return dependencyObj; } return dependencyObj[key]; } function setDependent(obj, isload) { var name = obj.id || (obj[0] && obj[0].id) || ""; var module = jQuery("[id='property(module)']").val(); var val = ""; var myObject = getMapDependenySelectValues(module, "JSON_VALUES"); if (myObject != undefined) { val = myObject[name]; } var mySelObject = getMapDependenySelectValues(module, "JSON_SELECT_VALUES"); if (val != null && val != "" && val != "null" && mySelObject) { var fields = val; for (var i in fields) { if (fields.hasOwnProperty(i)) { var isDependent = false; var label = i; var values = fields[i]; if (label.indexOf(")") > -1) { label = label.replace(/\)/g, '_____'); } if (label.indexOf("(") > -1) { label = label.replace(/\(/g, '____'); } if (label.indexOf(".") > -1) { label = label.replace(/\./g, '___'); } var depObj = document.forms['zsWebToCase_222550000020802179'][label]; if (depObj && depObj.options) { var mapValues = ""; var selected_val = depObj.value; var depLen = depObj.options.length - 1; for (var n = depLen; n >= 0; n--) { if (depObj.options[n].selected) { if (mapValues == "") { mapValues = depObj.options[n].value; } else { mapValues = mapValues + ";;;" + depObj.options[n].value; } } } depObj.value = ""; var selectValues = mySelObject[label]; for (var k in values) { var rat = k; if (rat == "-None-") { rat = ""; } var parentValues = mySelObject[name]; if (rat == trimBoth(obj.value)) { isDependent = true; depObj.length = 0; var depvalues = values[k]; var depLen = depvalues.length - 1; for (var j = 0; j <= depLen; j++) { var optionElement = document.createElement("OPTION"); var displayValue = depvalues[j]; var actualValue = displayValue; if (actualValue == "-None-") { optionElement.value = ""; displayValue = "-None-"; } else { optionElement.value = actualValue; } optionElement.text = displayValue; if (mapValues != undefined) { var mapValue = mapValues.split(";;;"); var len = mapValue.length; for (var p = 0; p < len; p++) { if (actualValue == mapValue[p]) { optionElement.selected = true; } } } depObj.options.add(optionElement); } } } if (!isDependent) { depObj.length = 0; var len = selectValues.length; for (var j = 0; j < len; j++) { var actualValue = selectValues[j]; var optionElement = document.createElement("OPTION"); if (actualValue == "-None-") { optionElement.value = ""; } else { optionElement.value = selectValues[j]; } optionElement.text = selectValues[j]; depObj.options.add(optionElement); } depObj.value = selected_val; } if (!isload) { setDependent(depObj, false); } var jdepObj = jQuery(depObj); if (jdepObj.hasClass('select2-offscreen')) { jdepObj.select2("val", jdepObj.val()); } } } } } } var zctt = function () { var tt, mw = 400, top = 10, left = 0, doctt = document; var ieb = doctt.all ? true : false; return { showtt: function (cont, wid) { if (tt == null) { tt = doctt.createElement('div'); tt.setAttribute('id', 'tooltip-zc'); doctt.body.appendChild(tt); doctt.onmousemove = this.setpos; doctt.onclick = this.hidett; } tt.style.display = 'block'; tt.innerHTML = cont; tt.style.width = wid ? wid + 'px' : 'auto'; if (!wid && ieb) { tt.style.width = tt.offsetWidth; } if (tt.offsetWidth > mw) { tt.style.width = mw + 'px' } h = parseInt(tt.offsetHeight) + top; w = parseInt(tt.offsetWidth) + left; }, hidett: function () { tt.style.display = 'none'; }, setpos: function (e) { var u = ieb ? event.clientY + doctt.body.scrollTop : e.pageY; var l = ieb ? event.clientX + doctt.body.scrollLeft : e.pageX; var cw = doctt.body.clientWidth; var ch = doctt.body.clientHeight; if (l < 0) { tt.style.left = left + 'px'; tt.style.right = ''; } else if ((l + w + left) > cw) { tt.style.left = ''; tt.style.right = ((cw - l) + left) + 'px'; } else { tt.style.right = ''; tt.style.left = (l + left) + 'px'; } if (u < 0) { tt.style.top = top + 'px'; tt.style.bottom = ''; } else if ((u + h + left) > ch) { tt.style.top = ''; tt.style.bottom = ((ch - u) + top) + 'px'; } else { tt.style.bottom = ''; tt.style.top = (u + top) + 'px'; } } }; }(); /*var zsWebFormMandatoryFields = new Array("First Name", "Contact Name", "Date of Birth", "Gender", "Phone", "Email", "Shop Address", "State", "LGA", "Referral Channel", "Subject");*/ var zsFieldsDisplayLabelArray = new Array("First Name", "Last Name", "Date of Birth ", "Gender", "Phone", "Email", "Shop Address", "Shop State", "LGA", "Referral Channel", "Subject"); function zsValidateMandatoryFields() { var name = ''; var email = ''; var isError = 0; for (var index = 0; index < zsWebFormMandatoryFields.length; index++) { isError = 0; var fieldObject = document.forms['zsWebToCase_222550000020802179'][zsWebFormMandatoryFields[index]]; if (fieldObject) { if (((fieldObject.value).replace(/^\s+|\s+$/g, '')).length == 0) { alert(zsFieldsDisplayLabelArray[index] + ' cannot be empty '); fieldObject.focus(); isError = 1; return false; } else { if (fieldObject.name == 'Email') { if (!fieldObject.value.match(/[A-Za-z0-9._%\-+]+@[A-Za-z0-9.\-]+\.[a-zA-Z]{2,22}/)) { isError = 1; alert('Enter a valid email-Id'); fieldObject.focus(); return false; } } } if (fieldObject.nodeName == 'SELECT') { if (fieldObject.options[fieldObject.selectedIndex].value == '-None-') { alert(zsFieldsDisplayLabelArray[index] + ' cannot be none'); fieldObject.focus(); isError = 1; return false; } } if (fieldObject.type == 'checkbox') { if (fieldObject.checked == false) { alert('Please accept ' + zsFieldsDisplayLabelArray[index]); fieldObject.focus(); isError = 1; return false; } } } } if (isError == 0) { document.getElementById('zsSubmitButton_222550000020802179').setAttribute('disabled', 'disabled'); } } var ZSEncoder = { encodeForHTML: function (str) { if (str && typeof (str) === 'string') { return jQuery.encoder.encodeForHTML(str); } return str; }, encodeForHTMLAttribute: function (str) { if (str && typeof (str) === 'string') { return jQuery.encoder.encodeForHTMLAttribute(str); } return str; }, encodeForJavascript: function (str) { if (str && typeof (str) === 'string') { return jQuery.encoder.encodeForJavascript(str); } return str; }, encodeForCSS: function (str) { if (str && typeof (str) === 'string') { return jQuery.encoder.encodeForCSS(str); } return str; } }; var zsAttachedAttachmentsCount = 0; var zsAllowedAttachmentLimit = 4; var zsAttachmentFileBrowserIdsList = [1, 2, 3, 4, 5]; function zsOpenCloudPickerIframe() { if (zsAttachedAttachmentsCount < 5) { var zsCloudPickerIframeSrc = jQuery('#zsCloudPickerIframeSrc').val(); jQuery('#zsCloudAttachmentIframe').attr('src', zsCloudPickerIframeSrc.substring(0, zsCloudPickerIframeSrc.length - 1) + (5 - zsAttachedAttachmentsCount)).show(); zsListenCloudPickerMessages(); } } function zsListenCloudPickerMessages() { if (window.addEventListener) { window.addEventListener('message', zsWebReceiveMessage, false); } else if (window.attachEvent) { window.attachEvent('onmessage', zsWebReceiveMessage); } } var zsCloudPickerJSON = {}; function zsWebReceiveMessage(event) { var zsUrlRegex = /^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\:\'\/\\+=&amp;%\$#_]*)?$/; if (zsUrlRegex.test(event.origin)) { var zsMessageType = event.data.split('&&&'); if (zsMessageType[0] == 'zsCloudPickerMessage') { if (window.addEventListener) { window.removeEventListener('message', zsWebReceiveMessage, false); } else if (window.attachEvent) { window.detachEvent('onmessage', zsWebReceiveMessage); } jQuery('#zsCloudAttachmentIframe').hide(); var isAttachedFilesDetails = zsMessageType[1].split('|||'); if (isAttachedFilesDetails[0] == 'cloudPickerResponse') { var zsCloudPickerAttachmentDetails = isAttachedFilesDetails[1].split('::::'); var zsCloudPickerAttachmentsJSON = jQuery.parseJSON(zsCloudPickerAttachmentDetails[0]); if (zsAttachedAttachmentsCount <= zsAllowedAttachmentLimit) { zsRenderCloudAttachments(zsCloudPickerAttachmentsJSON); } else { alert('You cannot attach more than 5 files'); return false; } } } } } function zsRenderCloudAttachments(zsCloudPickerAttachmentsJSON) { if (!jQuery.isEmptyObject(zsCloudPickerAttachmentsJSON)) { jQuery.each(zsCloudPickerAttachmentsJSON, function (cloudServiceName, attachments) { var zsAttachmentsArray = []; if (!jQuery.isEmptyObject(zsCloudPickerJSON[cloudServiceName])) { zsAttachmentsArray = zsCloudPickerJSON[cloudServiceName]; } for (var attachmentsIndex = 0; attachmentsIndex < attachments.length; attachmentsIndex++) { if (zsAttachedAttachmentsCount <= zsAllowedAttachmentLimit) { var zsCloudAttachmentsList = ''; var attachmentsDetailJSON = attachments[attachmentsIndex]; var zsCloudAttachmentName = attachmentsDetailJSON['docName']; var extension = zsCloudAttachmentName.split('.').pop().toLowerCase(); var unSupportedExtensions = ["ade", "adp", "bat", "chm", "cmd", "com", "cpl", "exe", "hta", "ins", "isp", "jar", "lib", "lnk", "mde", "msc", "msp", "mst", "pif", "scr", "sct", "shb", "sys", "vb", "vbe", "vxd", "wsc", "wsf", "wsh", "jse", "vbs"]; if (unSupportedExtensions.indexOf(extension) != -1) { alert("The file wasn't attached since its extension is not supported."); continue; } zsAttachedAttachmentsCount = zsAttachedAttachmentsCount + 1; var zsCloudAttachmentId = attachmentsDetailJSON['docId']; zsCloudAttachmentId = zsCloudAttachmentId.replace(/\s/g, ''); zsCloudAttachmentsList = '<div class="filenamecls zsFontClass">' + ZSEncoder.encodeForHTML(zsCloudAttachmentName) + '<a id="' + ZSEncoder.encodeForHTMLAttribute(zsCloudAttachmentId) + '" cloudservice="' + ZSEncoder.encodeForHTMLAttribute(cloudServiceName) + '" class="zscloudAttachment" style="margin-left:10px;" href="javascript:;">X</a> </div>'; jQuery('#zsFileBrowseAttachments').append(zsCloudAttachmentsList); zsAttachmentsArray.push(attachmentsDetailJSON); zsCloudPickerJSON[cloudServiceName] = zsAttachmentsArray; jQuery("input[name='zsCloudPickerAttachments']")[0].value = JSON.stringify(zsCloudPickerJSON); } } }); } zsChangeMousePointer(); } jQuery(document).off('click.cAtm').on('click.cAtm', '.zscloudAttachment', function () { var cloudService = jQuery(this).attr('cloudservice'); var cloudAttachmentId = jQuery(this).attr('id'); var zsCloudAttachmentsArr = zsCloudPickerJSON[cloudService]; var isZsCloudAttachmentRemoved = 0; for (var attachmentsIndex = 0; attachmentsIndex < zsCloudAttachmentsArr.length; attachmentsIndex++) { if (isZsCloudAttachmentRemoved != 1) { jQuery.each(zsCloudAttachmentsArr[attachmentsIndex], function (attachmentsDetailJsonKey, attachmentsDetailJsonValue) { if (attachmentsDetailJsonKey == 'docId' && attachmentsDetailJsonValue.replace(/\s/g, '') == cloudAttachmentId) { var zsAttachmentToBeRemoved = jQuery.inArray(zsCloudAttachmentsArr[attachmentsIndex], zsCloudAttachmentsArr); zsCloudAttachmentsArr.splice(zsAttachmentToBeRemoved, 1); isZsCloudAttachmentRemoved = 1; } }); } } jQuery(this).parent().remove(); zsAttachedAttachmentsCount = zsAttachedAttachmentsCount - 1; jQuery("input[name='zsCloudPickerAttachments']")[0].value = JSON.stringify(zsCloudPickerJSON); zsChangeMousePointer(); }); function zsRenderBrowseFileAttachment(zsAttachmentObject, zsAttachmentDetails) { if (zsAttachmentObject != '') { if (zsAttachedAttachmentsCount < 5) { var zsFileName = ''; if ((zsAttachmentObject.indexOf('\\') > -1)) { var zsAttachmentDataSplits = zsAttachmentObject.split('\\'); var zsAttachmentDataSplitsLen = zsAttachmentDataSplits.length; zsFileName = zsAttachmentDataSplits[zsAttachmentDataSplitsLen - 1]; } else { zsFileName = zsAttachmentObject; } var extension = zsFileName.split('.').pop().toLowerCase(); var unSupportedExtensions = ["ade", "adp", "bat", "chm", "cmd", "com", "cpl", "exe", "hta", "ins", "isp", "jar", "lib", "lnk", "mde", "msc", "msp", "mst", "pif", "scr", "sct", "shb", "sys", "vb", "vbe", "vxd", "wsc", "wsf", "wsh", "jse", "vbs"]; if (unSupportedExtensions.indexOf(extension) != -1) { alert("The file wasn't attached since its extension is not supported."); return; } var zsCurrentAttachmentIdTokens = jQuery(zsAttachmentDetails).attr('id').split('_'); var zsCurrentAttachmentId = parseInt(zsCurrentAttachmentIdTokens[1]); var zsAttachmentIdToBeRemoved = jQuery.inArray(zsCurrentAttachmentId, zsAttachmentFileBrowserIdsList); zsAttachmentFileBrowserIdsList.splice(zsAttachmentIdToBeRemoved, 1); var zsNextAttachmentId = zsAttachmentFileBrowserIdsList[0]; var zsnextAttachment = 'zsattachment_' + zsNextAttachmentId; jQuery('#zsattachment_' + zsCurrentAttachmentId).hide(); jQuery('#' + zsnextAttachment).show(); jQuery('#zsFileBrowseAttachments').append('<div class="filenamecls zsFontClass" id="file_' + zsCurrentAttachmentId + '">' + ZSEncoder.encodeForHTML(zsFileName) + '<a class="zsfilebrowseAttachment" style="margin-left:10px;" href="javascript:;" id="fileclose_' + zsCurrentAttachmentId + '">X</a></div>'); zsAttachedAttachmentsCount = zsAttachedAttachmentsCount + 1; } } zsChangeMousePointer(); } jQuery(document).off('click.fba').on('click.fba', '.zsfilebrowseAttachment', function () { var currentlyDeletedElement = jQuery(this).attr('id').split('_')[1]; jQuery('#zsattachment_' + currentlyDeletedElement).val(''); jQuery('#zsattachment_' + currentlyDeletedElement).replaceWith(jQuery('#zsattachment_' + currentlyDeletedElement).clone()); jQuery(this).parent().remove(); zsAttachedAttachmentsCount = zsAttachedAttachmentsCount - 1; zsAttachmentFileBrowserIdsList.push(parseInt(currentlyDeletedElement)); zsRearrangeFileBrowseAttachments(); zsChangeMousePointer(); }); function zsRearrangeFileBrowseAttachments() { jQuery.each(jQuery('input[type = file]'), function (fileIndex, fileObject) { fileIndex = fileIndex + 1; if (fileIndex == zsAttachmentFileBrowserIdsList[0]) { jQuery('#zsattachment_' + fileIndex).show(); } else { jQuery('#zsattachment_' + fileIndex).hide(); } }); } function zsOpenFileBrowseAttachment(clickEvent) { if (zsAttachedAttachmentsCount >= 5) { clickEvent.preventDefault(); } } function zsChangeMousePointer() { if (zsAttachedAttachmentsCount >= 5) { jQuery('#zsMaxLimitMessage').show(); jQuery('#zsattachment_1,#zsattachment_2,#zsattachment_3,#zsattachment_4,#zsattachment_5').hide(); jQuery('#zsBrowseAttachment,#zsCloudAttachment').css('cursor', 'default'); } else { jQuery('#zsMaxLimitMessage').hide(); zsRearrangeFileBrowseAttachments(); jQuery('#zsBrowseAttachment,#zsCloudAttachment').css('cursor', 'pointer'); } } document.onreadystatechange = function () { if (window.zsRegenerateCaptcha) { zsRegenerateCaptcha(); } setAllDependancyFieldsMapping(); document.getElementById('zsSubmitButton_222550000020802179').removeAttribute('disabled'); zsAttachedAttachmentsCount = 0; zsAttachmentFileBrowserIdsList = [1, 2, 3, 4, 5]; jQuery('#zsFileBrowseAttachments').html(''); jQuery.each(jQuery('input[type = file]'), function (fileIndex, fileObject) { var zsAttachmentId = jQuery(fileObject).attr('id'); var zsAttachmentNo = zsAttachmentId.split('_')[1]; var zsAttachedFile = jQuery('#zsattachment_' + zsAttachmentNo); if (zsAttachedFile[0] != undefined && zsAttachedFile[0].files[0] != undefined) { var zsFileBrowserAttachmentHtml = ''; zsAttachedFileName = zsAttachedFile[0].files[0].name; zsFileBrowserAttachmentHtml = '<div class="filenamecls zsFontClass" id="file_' + zsAttachmentNo + '">' + ZSEncoder.encodeForHTML(zsAttachedFileName) + '<a class="zsfilebrowseAttachment" style="margin-left:10px" href="javascript:;" id="fileclose_' + zsAttachmentNo + '">X</a></div>'; jQuery('#zsFileBrowseAttachments').append(zsFileBrowserAttachmentHtml); zsAttachedAttachmentsCount = zsAttachedAttachmentsCount + 1; var zsAttachmentIdToBeRemoved = jQuery.inArray(parseInt(zsAttachmentNo), zsAttachmentFileBrowserIdsList); zsAttachmentFileBrowserIdsList.splice(zsAttachmentIdToBeRemoved, 1); } }); if (document.forms['zsWebToCase_222550000020802179']['zsCloudPickerAttachments'] != undefined) { var zsCloudAttachments = jQuery.parseJSON(document.forms['zsWebToCase_222550000020802179']['zsCloudPickerAttachments'].value); zsRenderCloudAttachments(zsCloudAttachments); } zsRearrangeFileBrowseAttachments(); zsChangeMousePointer(); }; function zsResetWebForm(webFormId) { document.forms['zsWebToCase_' + webFormId].reset(); document.getElementById('zsSubmitButton_222550000020802179').removeAttribute('disabled'); setAllDependancyFieldsMapping(); zsAttachedAttachmentsCount = 0; zsAttachmentFileBrowserIdsList = [1, 2, 3, 4, 5]; jQuery('#zsFileBrowseAttachments').html(''); zsCloudPickerJSON = {}; if (document.forms['zsWebToCase_222550000020802179']['zsCloudPickerAttachments'] != undefined) { document.forms['zsWebToCase_222550000020802179']['zsCloudPickerAttachments'].value = JSON.stringify({}); } zsRearrangeFileBrowseAttachments(); zsChangeMousePointer(); } </script>
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T555QRZ');</script>
+<!-- End Google Tag Manager -->
+
+
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4140394-76"></script>
+ -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-4140394-76');
+</script>
+
+<script src="./api.js" async="" defer=""></script>
+<script>
+function submitUserForm() {
+    var response = grecaptcha.getResponse();
+    if(response.length == 0) {
+        document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+        return false;
+    }
+    return true;
+}
+ 
+function verifyCaptcha() {
+    document.getElementById('g-recaptcha-error').innerHTML = '';
+}
+</script>
+<style>#optimoveSdkWebTool {
+    width: 0;
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+}
+
+#optimoveSdkWebTool.open {
+    max-width: 1500px;
+    min-width: 340px;
+    height: 100vh;
+}
+
+#optimoveSdkWebTool.open.ag-theme-balham {
+    width: 500px;
+    display: block;
+    z-index: 10000;
+    -webkit-box-shadow: -3px 0 10px 0 rgba(200, 200, 200, 0.5);
+    box-shadow: -3px 0 10px 0 rgba(200, 200, 200, 0.5);
+}
+
+#optimovePanelHead.panel-heading {
+    padding: 16px 15px;
+}
+
+#optimovePanelHead .popupDiv {
+    padding-left: 334px;
+    position: relative;
+}
+
+#optimovePanelHead .popupDiv .popup {
+    position: absolute;
+    visibility: hidden;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup {
+    visibility: visible;
+    display: block;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 4px;
+    opacity: 1;
+    width: 109px;
+    height: 84px;
+    z-index: 1;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockRightPicDiv {
+    height: 28px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockRightPicDiv .dockText {
+    display: inline;
+    padding-left: 6px;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockRightPicDiv:hover {
+    background-color: #ECEFF1;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockLeftPicDiv {
+    height: 28px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockLeftPicDiv .dockText {
+    display: inline;
+    padding-left: 6px;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockLeftPicDiv:hover {
+    background-color: #ECEFF1;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockBottomPicDiv {
+    height: 28px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockBottomPicDiv .dockText {
+    display: inline;
+    padding-left: 6px;
+}
+
+#optimovePanelHead .popupDiv .popup.showPopup .dockBottomPicDiv:hover {
+    background-color: #ECEFF1;
+}
+
+#optimovePanelHead .popup.popupNotShow {
+    visibility: hidden;
+}
+
+#optimovePanelHead .popup.showPopup {
+    visibility: visible;
+    display: block;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 4px;
+    opacity: 1;
+    width: 109px;
+    height: 83px;
+}
+
+#optimoveSdkWebTool.open.ag-theme-balham .ag-header-cell {
+    padding-right: 0px !important;
+}
+
+#optimoveSDKDragger {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 1;
+    cursor: w-resize;
+}
+
+#optimoveSdkWebTool .material-icons {
+    cursor: pointer;
+}
+
+#optimoveSdkWebTool .ag-root-wrapper.ag-layout-normal {
+    height: calc(100% - 103px);
+}
+
+#optimoveSdkWebTool.ag-theme-balham .is-not-main {
+    background-color: #ECEFF1;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .errorNotMainRow {
+    background-color: #FFD6C2;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-header-cell {
+    background-color: #CFD8DC;
+    box-sizing: content-box;
+}
+
+#optimoveSdkWebTool .ag-header-cell-text {
+    color: #455A64;
+    text-align: left;
+    font: Bold 12px/14px Roboto;
+    letter-spacing: 0;
+    opacity: 1;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell {
+    text-align: left;
+    font: Regular 12px/14px Roboto;
+    letter-spacing: 0;
+    color: #37474F;
+    opacity: 1;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell .fa-angle-right,
+#optimoveSdkWebTool.ag-theme-balham .ag-cell .fa-angle-down {
+    width: 18px;
+    height: 18px;
+    padding-right: 10px;
+    color: #37474F;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell .fa-exclamation-circle {
+    padding-right: 20px;
+    width: 16px;
+    height: 17px;
+    color: #FF5500;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.mainRowClass.optDateCell.optHasError {
+    color: #FF5500;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.mainRowClass.mainRowClassEventId.optHasError {
+    color: #FF5500;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.mainRowClass.mainRowClassEventName.optHasError {
+    color: #FF5500;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.notMainDateRowClass {
+    left: 26px !important;
+    white-space: normal !important;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.notMainDateRowClass.optParametersWarning {
+    color: #212121 !important;
+    font-weight: bold !important;
+    left: 26px !important;
+}
+
+#optimoveSdkWebTool .cell-wrap-text {
+    white-space: normal !important;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.notMainDateRowClass.optNotExistWarning {
+    left: 26px !important;
+    left: 26px !important;
+    white-space: nowrap !important;
+    color: #CF4500;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.notMainRowClass.notMainRowClassEventId {
+    left: 160px !important;
+    font-weight: bold;
+    white-space: normal !important;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-cell.notMainRowClass.notMainRowClassEventId.optHasError {
+    left: 160px !important;
+    font-weight: normal;
+    white-space: normal !important;
+}
+
+#optimoveSdkWebTool .ag-overlay-loading-center {
+    text-align: center;
+    font: Bold 24px/28px Roboto;
+    letter-spacing: 0;
+    color: #F2F0F0;
+    opacity: 1;
+}
+
+#optimoveSdkWebTool .cell-parameter-value {
+    width: 540px !important;
+    ;
+}
+
+#optimoveSdkWebTool .ag-full-width-row {
+    padding-left: 8px !important;
+    padding-top: 16px !important;
+}
+
+#optimoveSdkWebTool .optimoveTopHeadLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#optimoveSdkWebTool .optimoveTopHeadLine .optimoveWebToolBtnClose {
+    box-shadow: none;
+}
+
+#optimoveSdkWebTool .optimoveTopHeadLine .optimoveWebToolBtnClose i {
+    font-size: 17px;
+    color: #5F7C8A;
+}
+
+#optimoveSdkWebTool .optimoveTopHeadLine .positionButtonPic {
+    padding-right: 10px;
+}
+
+#optimoveSdkWebTool .optimoveTopHeadLineText {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    color: #424242;
+    text-align: left;
+    font: Light 18px/18px Roboto;
+    letter-spacing: 0;
+    opacity: 1;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+#optimoveSdkWebTool .optimoveBottomHeadLineText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0 5px;
+    text-align: left;
+    font: Regular 12px/16px Roboto;
+    letter-spacing: 0;
+    color: #546E7A;
+    opacity: 1;
+}
+
+#optimoveSdkWebTool .opvArrowNoParams {
+    visibility: hidden;
+}
+
+#optimoveSdkWebTool .btn-link.opt-btn-link {
+    padding-top: 5px;
+    padding-left: 0px;
+    border: 0;
+    cursor: pointer;
+    color: #00AAFF;
+    font-size: 12px;
+    font-weight: 700;
+    user-select: none;
+    text-shadow: none;
+    background-color: white !important;
+}
+
+#optimoveSdkWebTool .btn-link.opt-btn-link:hover {
+    color: #00699E !important;
+    text-decoration: none;
+}
+
+#optimoveSdkWebTool .opt-btn-link.btn-link.disable-btn:hover {
+    color: #B0BEC5 !important;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-header-cell::after,
+.ag-theme-balham .ag-header-group-cell::after {
+    border-right: none;
+}
+
+#optimoveSdkWebTool .ag-row-hover {
+    background-color: #F5F7F7 !important;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-row-selected.opti-row-class {
+    background-color: white !important;
+    border-color: #d9dcde;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-root {
+    border: 0px !important;
+}
+
+#optimoveSdkWebTool.ag-theme-balham .ag-overlay-loading-center {
+    border: 0px !important;
+}</style><style>.kumulos-rating{display:flex;height:20px;font-size:16px;align-items:center;margin-top:3px}.kumulos-rating .kumulos-rating-star{position:relative}.kumulos-rating .kumulos-rating-star .kumulos-rating-halfstar{position:absolute;left:0;top:0;width:50%;overflow:hidden}.kumulos-rating .kumulos-rating-count{font-size:12px;margin-left:3px}</style><style>@keyframes kumulos-anim-shake{10%,90%{transform:translate3d(-1px, 0, 0)}20%,80%{transform:translate3d(2px, 0, 0)}30%,50%,70%{transform:translate3d(-2px, 0, 0)}40%,60%{transform:translate3d(2px, 0, 0)}}@keyframes kumulos-anim-fade-in{0%{opacity:0}100%{opacity:1}}@keyframes kumulos-reveal-left{0%{opacity:0;transform:translate(10px, -50%)}100%{opacity:1;transform:translate(0px, -50%)}}@keyframes kumulos-reveal-right{0%{opacity:0;transform:translate(-10px, -50%)}100%{opacity:1;transform:translate(0px, -50%)}}@keyframes kumulos-toast-in-out{0%{opacity:0;transform:translate3d(-50%, 100%, 0)}100%{opacity:1;transform:translate3d(-50%, 0, 0)}}@keyframes kumulos-slide-down{0%{transform:translate3d(0, -100%, 0)}100%{transform:translate3d(0, 0, 0)}}@keyframes kumulos-slide-up{0%{transform:translate3d(0, 100%, 0)}100%{transform:translate3d(0, 0, 0)}}.kumulos-tooltip-parent .kumulos-tooltip{display:none}.kumulos-tooltip-parent:hover .kumulos-tooltip{display:block}.kumulos-tooltip{background:#222;position:absolute;top:50%;padding:8px 12px;font:14px helvetica,sans-serif;color:#eee;border-radius:6px;white-space:nowrap;z-index:1100;pointer-events:none;transform:translateY(-50%);will-change:opacity,transform}.kumulos-tooltip:after{content:"";width:0;height:0;position:absolute;top:50%;right:100%;border:solid rgba(0,0,0,0);border-width:8px;margin-top:-8px}.kumulos-tooltip-right{left:calc(100% + 12px);animation:kumulos-reveal-right .2s cubic-bezier(0.23, 1, 0.32, 1)}.kumulos-tooltip-right:after{border-right-color:#222;right:100%}.kumulos-tooltip-left{right:calc(100% + 12px);animation:kumulos-reveal-left .2s cubic-bezier(0.23, 1, 0.32, 1)}.kumulos-tooltip-left:after{border-left-color:#222;left:100%}.kumulos-toast{display:inline-block;position:fixed;bottom:0;left:50%;transform:translateX(-50%);background:#222;z-index:1100;padding:12px;font-size:16px;font-family:helvetica,sans-serif;color:#eee;border-radius:8px 8px 0 0;animation:kumulos-toast-in-out .25s cubic-bezier(0.23, 1, 0.32, 1)}.kumulos-prompt{box-sizing:border-box;z-index:1000}.kumulos-prompt *,.kumulos-prompt *:before,.kumulos-prompt *:after{box-sizing:inherit}.kumulos-action-button{border:none;margin-left:10px;padding:7px 10px;min-width:100px;text-transform:uppercase;font-size:14px;font-weight:600}.kumulos-action-button:hover{cursor:pointer}.kumulos-action-button-cancel{background:none;color:#555}.kumulos-action-button-cancel:hover{background:#eee}.kumulos-action-button-confirm{border-radius:3px;box-shadow:1px 3px 3px rgba(0,0,0,.54);background:#4c88e0;color:#fff}.kumulos-action-button-confirm:hover{opacity:.8}.kumulos-checkbox-container{display:block;position:relative;padding-left:30px;margin-bottom:12px;cursor:pointer;user-select:none;line-height:20px;font-size:.9em;font-weight:bold}.kumulos-checkbox-container input{position:absolute;opacity:0;cursor:pointer;height:0;width:0}.kumulos-checkbox{box-sizing:border-box;position:absolute;top:0;left:0;height:20px;width:20px;border-radius:3px;border:1px solid #ddd}.kumulos-checkbox-container:hover input~.kumulos-checkbox{border-color:#aaa;display:block}.kumulos-checkbox-container:hover input~.kumulos-checkbox:after{display:block;border-color:#aaa;box-shadow:none}.kumulos-checkbox:after{content:"";position:absolute;display:none}.kumulos-checkbox-container input:checked~.kumulos-checkbox{border-color:#aaa}.kumulos-checkbox-container input:checked~.kumulos-checkbox:after{display:block;border-color:#222;box-shadow:2px 2px 2px 0px rgba(0,0,0,.3)}.kumulos-checkbox-container .kumulos-checkbox:after{left:10px;top:-7px;width:8px;height:20px;border:solid #000;border-width:0 3px 3px 0;transform:rotate(45deg)}.kumulos-banner-container{display:flex;flex-direction:row;flex-flow:wrap;position:fixed;left:0;width:100%;min-height:80px;padding:10px;font-family:helvetica,sans-serif;backface-visibility:hidden;box-shadow:0 0 3px 1px rgba(0,0,0,.54)}.kumulos-banner-container.kumulos-prompt-position-top{top:0;animation:kumulos-slide-down .4s ease}.kumulos-banner-container.kumulos-prompt-position-bottom{bottom:0;top:unset;animation:kumulos-slide-up .4s ease}@media only screen and (min-device-width: 480px){.kumulos-banner-container{flex-flow:initial}}.kumulos-banner-icon{width:65px;height:65px;margin-right:10px}.kumulos-banner-content{display:flex;flex-direction:column;flex:1}.kumulos-banner-header{display:flex;font-size:12px;line-height:14px}.kumulos-banner-header h1{font-size:inherit;font-weight:bold;margin:0 0 3px 0}@media only screen and (min-device-width: 480px){.kumulos-banner-header{font-size:18px}}.kumulos-banner-body{display:flex;flex-grow:2;align-items:flex-start;font-size:12px;line-height:14px;overflow:hidden;margin-top:10px}@media only screen and (min-device-width: 480px){.kumulos-banner-body{font-size:14px}}.kumulos-banner-actions{display:flex;align-self:center;justify-self:flex-end;width:100%;justify-content:flex-end;margin-top:10px}@media only screen and (min-device-width: 480px){.kumulos-banner-actions{width:auto;margin-top:0}}.kumulos-banner-compact .kumulos-banner-body{margin-top:0}.kumulos-banner-compact .kumulos-banner-actions{width:auto;margin-top:0}.kumulos-banner-compact .kumulos-banner-close{display:flex;justify-content:center;align-items:center;font-size:18px;font-weight:bold;margin-right:10px}@supports(padding: max(0px)){.kumulos-safe-area-inset-pad-left{padding-left:max(10px, env(safe-area-inset-left))}.kumulos-safe-area-inset-pad-right{padding-right:max(10px, env(safe-area-inset-right))}.kumulos-safe-area-inset-pad-top{padding-top:max(10px, env(safe-area-inset-top))}.kumulos-safe-area-inset-pad-bottom{padding-bottom:max(10px, env(safe-area-inset-bottom))}}.kumulos-bell-container{position:fixed}.kumulos-bell-container-bottom-left{bottom:15px;left:15px}.kumulos-bell-container-bottom-right{bottom:15px;right:15px}.kumulos-bell{transition:transform .2s cubic-bezier(0.23, 1, 0.32, 1),box-shadow .2s cubic-bezier(0.23, 1, 0.32, 1);border-radius:100%;border-color:#fff;background:#4c88e0;box-shadow:1px 2px 2px 0 rgba(0,0,0,.54);width:60px;height:60px;padding:10px;transform:scale(0.9);cursor:pointer;animation:kumulos-anim-fade-in .2s ease-in;backface-visibility:hidden}.kumulos-bell:hover{transform:scale(1);box-shadow:1px 2px 3px 1px rgba(0,0,0,.54)}.kumulos-bell:active{transform:scale(0.8);box-shadow:1px 2px 2px 0 rgba(0,0,0,.54)}.kumulos-bell svg{fill:#fff;animation:kumulos-anim-shake .4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;animation-delay:.3s}.kumulos-bell:before{content:"";display:block;width:85%;height:85%;border:solid 1px;border-radius:100%;border-color:inherit;position:absolute;top:0;left:0;margin:7.5% 0 0 7.5%}.kumulos-bell-inner{border-radius:100%}.kumulos-channel-dialog-container,.kumulos-alert-container{position:fixed;top:0;left:0;width:100%;height:100%;max-height:100%;padding:20px;display:flex;flex-direction:row;flex-wrap:wrap;font-family:helvetica,sans-serif;animation:kumulos-anim-fade-in .2s ease-in;backface-visibility:hidden}@media only screen and (min-device-width: 480px){.kumulos-channel-dialog-container,.kumulos-alert-container{left:50%;width:500px;min-height:250px;margin-left:-250px;box-shadow:0 0 3px 1px rgba(0,0,0,.54);height:auto}.kumulos-channel-dialog-container.kumulos-prompt-position-top-center,.kumulos-alert-container.kumulos-prompt-position-top-center{border-radius:0 0 3px 3px}.kumulos-channel-dialog-container.kumulos-prompt-position-center,.kumulos-alert-container.kumulos-prompt-position-center{border-radius:3px;top:120px}}.kumulos-channel-dialog-icon,.kumulos-alert-icon{order:2;width:60px;height:60px;align-self:flex-start}.kumulos-channel-dialog-content,.kumulos-alert-content{display:flex;order:1;flex-direction:column;flex:1;margin-right:10px}.kumulos-channel-dialog-header,.kumulos-alert-header{display:flex;font-size:18px;margin-bottom:20px}.kumulos-channel-dialog-header h1,.kumulos-alert-header h1{font-size:inherit;font-weight:400;margin:0}.kumulos-channel-dialog-body,.kumulos-alert-body{flex:1;white-space:pre-wrap;overflow-y:auto}.kumulos-channel-dialog-actions,.kumulos-alert-actions{display:flex;justify-content:flex-end;margin-top:20px;order:3;width:100%;height:30px;align-self:flex-end}.kumulos-channel-list-container{margin:20px 0}body.kumulos-background-mask-blur{overflow:hidden}.kumulos-background-mask-blur>*:not(.kumulos-prompt):not(.kumulos-overlay):not(.kumulos-background-mask){filter:blur(3px)}.kumulos-background-mask{position:fixed;top:0;left:0;height:100%;width:100%;z-index:900;background-color:rgba(0,0,0,.3);display:block}.kumulos-overlay-blur>*:not(.kumulos-overlay){filter:blur(3px)}.kumulos-overlay{box-sizing:border-box;z-index:2000}.kumulos-overlay *,.kumulos-overlay *:before,.kumulos-overlay *:after{box-sizing:inherit}.kumulos-overlay-strip{display:flex;box-shadow:0 0 6px 0 rgba(0,0,0,.8);min-height:150px}.kumulos-overlay-strip:before{display:block;content:"";width:calc(500px + 12%);max-width:660px}.kumulos-overlay-content-container{display:flex;max-width:38%;padding:1em;font-size:14px;font-family:helvetica,sans-serif}.kumulos-overlay-content-container *{margin:0}.kumulos-overlay-content-container svg{margin:55px 1.7em 0 0;stroke:none;fill:rgba(0,0,0,.8);flex-shrink:0}.kumulos-overlay-content-container img{width:55px;height:55px;flex-shrink:0}.kumulos-overlay-content-container h3,.kumulos-overlay-content-container p,.kumulos-overlay-content-container a{color:inherit}.kumulos-overlay-content-container h3{font-size:1.3em;font-weight:bold}.kumulos-overlay-content-container a{margin-right:.65em;opacity:.8;text-decoration:none}.kumulos-overlay .kumulos-overlay-content{margin-left:.75em}.kumulos-overlay .kumulos-overlay-content p{margin:.5em 0}.kumulos-overlay .kumulos-silent-overlay-indicator{position:absolute;left:0;top:0;z-index:1}.kumulos-overlay .kumulos-silent-overlay-content-text{max-width:500px;text-align:center;font-size:1.3em;font-family:helvetica,sans-serif}.kumulos-overlay-chrome .kumulos-overlay-strip:before{width:440px}.kumulos-overlay-edge .kumulos-overlay-strip:before{display:none}.kumulos-overlay-edge .kumulos-overlay-strip{position:absolute;bottom:0;width:100%;padding-bottom:60px;justify-content:center}.kumulos-overlay-edge .kumulos-overlay-content-container{min-width:675px}.kumulos-overlay-edge .kumulos-overlay-content-container svg{order:1;transform:rotate(-30deg)}.kumulos-overlay-safari .kumulos-overlay-strip:before{width:calc(50% + 212px);max-width:100%}@media(max-width: 900px){.kumulos-overlay{display:none}}</style></head>
+<body>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-T555QRZ
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="form-wrapper">
+    <form name="zsWebToCase_222550000020802179" id="zsWebToCase_222550000020802179" onsubmit="return submitUserForm();" action="https://kameleon-apps.com/sajtovi/betking/custom-web2lead/mail.php" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
+        
+        <input type="hidden" name="xnQsjsdp" value="utx*K*e3JVSdRhQQlIwaCw$$">  
+        <input type="hidden" name="xmIwtLD" value="TLYwu0vOtW-vimhTe1I70pdCC2pZ9PCh">  
+        <input type="hidden" name="xJdfEaS" value="">  
+        <input type="hidden" name="actionType" value="Q2FzZXM=">   
+        <input type="hidden" id="property(module)" value="Cases">  
+        <input type="hidden" id="dependent_field_values_Cases" value="{&quot;JSON_VALUES&quot;:{&quot;CASECF9&quot;:{&quot;CASECF4&quot;:{&quot;Bauchi&quot;:[&quot;Alkaleri&quot;,&quot;Bauchi&quot;,&quot;Bogoro&quot;,&quot;Damban&quot;,&quot;Darazo&quot;,&quot;Dass&quot;,&quot;Gamawa&quot;,&quot;Ganjuwa&quot;,&quot;Giade&quot;,&quot;Itas Gadau&quot;,&quot;Jama are&quot;,&quot;Katagum&quot;,&quot;Kirfi&quot;,&quot;Misau&quot;,&quot;Ningi&quot;,&quot;Shira&quot;,&quot;Tafawa Balewa&quot;,&quot;Toro&quot;,&quot;Warji&quot;,&quot;Zaki&quot;],&quot;Kogi&quot;:[&quot;Adavi&quot;,&quot;Ajaokuta&quot;,&quot;Ankpa&quot;,&quot;Bassa&quot;,&quot;Dekina&quot;,&quot;Ibaji&quot;,&quot;Idah&quot;,&quot;Igalamela Odolu&quot;,&quot;Ijumu&quot;,&quot;Kabba Bunu&quot;,&quot;Kogi&quot;,&quot;Lokoja&quot;,&quot;Mopa Muro&quot;,&quot;Ofu&quot;,&quot;Ogori Magongo&quot;,&quot;Okehi&quot;,&quot;Okene&quot;,&quot;Olamaboro&quot;,&quot;Omala&quot;,&quot;Yagba East&quot;,&quot;Yagba West&quot;],&quot;Abia&quot;:[&quot;Aba North&quot;,&quot;Aba South&quot;,&quot;Arochukwu&quot;,&quot;Bende&quot;,&quot;Ikwuano&quot;,&quot;Isiala Ngwa North&quot;,&quot;Isiala Ngwa South&quot;,&quot;Isuikwuato&quot;,&quot;Obi Ngwa&quot;,&quot;Ohafia&quot;,&quot;Osisioma&quot;,&quot;Ugwunagbo&quot;,&quot;Ukwa East&quot;,&quot;Ukwa West&quot;,&quot;Umuahia North&quot;,&quot;Umuahia South&quot;,&quot;Umu Nneochi&quot;],&quot;Lagos&quot;:[&quot;Agege&quot;,&quot;Ajeromi-Ifelodun&quot;,&quot;Alimosho&quot;,&quot;Amuwo-Odofin&quot;,&quot;Apapa&quot;,&quot;Badagry&quot;,&quot;Epe&quot;,&quot;Eti Osa&quot;,&quot;Ibeju-Lekki&quot;,&quot;Ifako-Ijaiye&quot;,&quot;Ikeja&quot;,&quot;Ikorodu&quot;,&quot;Island&quot;,&quot;Kosofe&quot;,&quot;Mainland&quot;,&quot;Mushin&quot;,&quot;Ojo&quot;,&quot;Oshodi-Isolo&quot;,&quot;Shomolu&quot;,&quot;Surulere&quot;],&quot;Akwa Ibom&quot;:[&quot;Abak&quot;,&quot;Eastern Obolo&quot;,&quot;Eket&quot;,&quot;Esit Eket&quot;,&quot;Essien Udim&quot;,&quot;Etim Ekpo&quot;,&quot;Etinan&quot;,&quot;Ibeno&quot;,&quot;Ibesikpo Asutan&quot;,&quot;Ibiono-Ibom&quot;,&quot;Ika&quot;,&quot;Ikono&quot;,&quot;Ikot Abasi&quot;,&quot;Ikot Ekpene&quot;,&quot;Ini&quot;,&quot;Itu&quot;,&quot;Mbo&quot;,&quot;Mkpat-Enin&quot;,&quot;Nsit-Ibom&quot;,&quot;Nsit-Ubium&quot;,&quot;Obot Akara&quot;,&quot;Okobo&quot;,&quot;Onna&quot;,&quot;Oron&quot;,&quot;Oruk Anam&quot;,&quot;Udung-Uko&quot;,&quot;Ukanafun&quot;,&quot;Uruan&quot;,&quot;Urue-Offong Oruko&quot;,&quot;Uyo&quot;],&quot;Anambra&quot;:[&quot;Aguata&quot;,&quot;Anambra East&quot;,&quot;Anambra West&quot;,&quot;Anaocha&quot;,&quot;Awka North&quot;,&quot;Awka South&quot;,&quot;Ayamelum&quot;,&quot;Dunukofia&quot;,&quot;Ekwusigo&quot;,&quot;Idemili North&quot;,&quot;Idemili South&quot;,&quot;Ihiala&quot;,&quot;Njikoka&quot;,&quot;Nnewi North&quot;,&quot;Nnewi South&quot;,&quot;Ogbaru&quot;,&quot;Onitsha North&quot;,&quot;Onitsha South&quot;,&quot;Orumba North&quot;,&quot;Orumba South&quot;,&quot;Oyi&quot;],&quot;Edo&quot;:[&quot;Akoko-Edo&quot;,&quot;Egor&quot;,&quot;Esan Central&quot;,&quot;Esan North-East&quot;,&quot;Esan South-East&quot;,&quot;Esan West&quot;,&quot;Etsako Central&quot;,&quot;Etsako East&quot;,&quot;Etsako West&quot;,&quot;Igueben&quot;,&quot;Ikpoba Okha&quot;,&quot;Orhionmwon&quot;,&quot;Oredo&quot;,&quot;Ovia North-East&quot;,&quot;Ovia South-West&quot;,&quot;Owan East&quot;,&quot;Owan West&quot;,&quot;Uhunmwonde&quot;],&quot;Yobe&quot;:[&quot;Bade&quot;,&quot;Bursari&quot;,&quot;Damaturu&quot;,&quot;Fika&quot;,&quot;Fune&quot;,&quot;Geidam&quot;,&quot;Gujba&quot;,&quot;Gulani&quot;,&quot;Jakusko&quot;,&quot;Karasuwa&quot;,&quot;Machina&quot;,&quot;Nangere&quot;,&quot;Nguru&quot;,&quot;Potiskum&quot;,&quot;Tarmuwa&quot;,&quot;Yunusari&quot;,&quot;Yusufari&quot;],&quot;Kano&quot;:[&quot;Ajingi&quot;,&quot;Albasu&quot;,&quot;Bagwai&quot;,&quot;Bebeji&quot;,&quot;Bichi&quot;,&quot;Bunkure&quot;,&quot;Dala&quot;,&quot;Dambatta&quot;,&quot;Dawakin Kudu&quot;,&quot;Dawakin Tofa&quot;,&quot;Doguwa&quot;,&quot;Fagge&quot;,&quot;Gabasawa&quot;,&quot;Garko&quot;,&quot;Garun Mallam&quot;,&quot;Gaya&quot;,&quot;Gezawa&quot;,&quot;Gwale&quot;,&quot;Gwarzo&quot;,&quot;Kabo&quot;,&quot;Kano Municipal&quot;,&quot;Karaye&quot;,&quot;Kibiya&quot;,&quot;Kiru&quot;,&quot;Kumbotso&quot;,&quot;Kunchi&quot;,&quot;Kura&quot;,&quot;Madobi&quot;,&quot;Makoda&quot;,&quot;Minjibir&quot;,&quot;Nasarawa&quot;,&quot;Rano&quot;,&quot;Rimin Gado&quot;,&quot;Rogo&quot;,&quot;Shanono&quot;,&quot;Sumaila&quot;,&quot;Takai&quot;,&quot;Tarauni&quot;,&quot;Tofa&quot;,&quot;Tsanyawa&quot;,&quot;Tudun Wada&quot;,&quot;Ungogo&quot;,&quot;Warawa&quot;,&quot;Wudil&quot;],&quot;Bayelsa&quot;:[&quot;Brass&quot;,&quot;Ekeremor&quot;,&quot;Kolokuma Opokuma&quot;,&quot;Nembe&quot;,&quot;Ogbia&quot;,&quot;Sagbama&quot;,&quot;Southern Ijaw&quot;,&quot;Yenagoa&quot;],&quot;Katsina&quot;:[&quot;Bakori&quot;,&quot;Batagarawa&quot;,&quot;Batsari&quot;,&quot;Baure&quot;,&quot;Bindawa&quot;,&quot;Charanchi&quot;,&quot;Dandume&quot;,&quot;Danja&quot;,&quot;Dan Musa&quot;,&quot;Daura&quot;,&quot;Dutsi&quot;,&quot;Dutsin Ma&quot;,&quot;Faskari&quot;,&quot;Funtua&quot;,&quot;Ingawa&quot;,&quot;Jibia&quot;,&quot;Kafur&quot;,&quot;Kaita&quot;,&quot;Kankara&quot;,&quot;Kankia&quot;,&quot;Katsina&quot;,&quot;Kurfi&quot;,&quot;Kusada&quot;,&quot;Mai Adua&quot;,&quot;Malumfashi&quot;,&quot;Mani&quot;,&quot;Mashi&quot;,&quot;Matazu&quot;,&quot;Musawa&quot;,&quot;Rimi&quot;,&quot;Sabuwa&quot;,&quot;Safana&quot;,&quot;Sandamu&quot;,&quot;Zango&quot;],&quot;Zamfara&quot;:[&quot;Anka&quot;,&quot;Bakura&quot;,&quot;Birnin Magaji Kiyaw&quot;,&quot;Bukkuyum&quot;,&quot;Bungudu&quot;,&quot;Gummi&quot;,&quot;Gusau&quot;,&quot;Kaura Namoda&quot;,&quot;Maradun&quot;,&quot;Maru&quot;,&quot;Shinkafi&quot;,&quot;Talata Mafara&quot;,&quot;Chafe&quot;,&quot;Zurmi&quot;],&quot;Taraba&quot;:[&quot;Ardo Kola&quot;,&quot;Bali&quot;,&quot;Donga&quot;,&quot;Gashaka&quot;,&quot;Gassol&quot;,&quot;Ibi&quot;,&quot;Jalingo&quot;,&quot;Karim Lamido&quot;,&quot;Kumi&quot;,&quot;Lau&quot;,&quot;Sardauna&quot;,&quot;Takum&quot;,&quot;Ussa&quot;,&quot;Wukari&quot;,&quot;Yorro&quot;,&quot;Zing&quot;],&quot;Kwara&quot;:[&quot;Asa&quot;,&quot;Baruten&quot;,&quot;Edu&quot;,&quot;Ekiti&quot;,&quot;Ifelodun&quot;,&quot;Ilorin East&quot;,&quot;Ilorin South&quot;,&quot;Ilorin West&quot;,&quot;Irepodun&quot;,&quot;Isin&quot;,&quot;Kaiama&quot;,&quot;Moro&quot;,&quot;Offa&quot;,&quot;Oke Ero&quot;,&quot;Oyun&quot;,&quot;Pategi&quot;],&quot;Plateau&quot;:[&quot;Bassa&quot;,&quot;Bokkos&quot;,&quot;Barkin Ladi&quot;,&quot;Jos East&quot;,&quot;Jos North&quot;,&quot;Jos South&quot;,&quot;Kanam&quot;,&quot;Kanke&quot;,&quot;Langtang South&quot;,&quot;Langtang North&quot;,&quot;Mangu&quot;,&quot;Mikang&quot;,&quot;Pankshin&quot;,&quot;Qua an Pan&quot;,&quot;Riyom&quot;,&quot;Shendam&quot;,&quot;Wase&quot;],&quot;Oyo&quot;:[&quot;Surulere&quot;,&quot;Afijio&quot;,&quot;Akinyele&quot;,&quot;Atiba&quot;,&quot;Atisbo&quot;,&quot;Egbeda&quot;,&quot;Ibadan North&quot;,&quot;Ibadan North-East&quot;,&quot;Ibadan North-West&quot;,&quot;Ibadan South-East&quot;,&quot;Ibadan South-West&quot;,&quot;Ibarapa Central&quot;,&quot;Ibarapa East&quot;,&quot;Ibarapa North&quot;,&quot;Ido&quot;,&quot;Irepo&quot;,&quot;Iseyin&quot;,&quot;Itesiwaju&quot;,&quot;Iwajowa&quot;,&quot;Kajola&quot;,&quot;Lagelu&quot;,&quot;Ogbomosho North&quot;,&quot;Ogbomosho South&quot;,&quot;Ogo Oluwa&quot;,&quot;Olorunsogo&quot;,&quot;Oluyole&quot;,&quot;Ona Ara&quot;,&quot;Orelope&quot;,&quot;Ori Ire&quot;,&quot;Oyo&quot;,&quot;Oyo East&quot;,&quot;Saki East&quot;,&quot;Saki West&quot;],&quot;Niger&quot;:[&quot;Agaie&quot;,&quot;Agwara&quot;,&quot;Bida&quot;,&quot;Borgu&quot;,&quot;Bosso&quot;,&quot;Chanchaga&quot;,&quot;Edati&quot;,&quot;Gbako&quot;,&quot;Gurara&quot;,&quot;Katcha&quot;,&quot;Kontagora&quot;,&quot;Lapai&quot;,&quot;Lavun&quot;,&quot;Magama&quot;,&quot;Mariga&quot;,&quot;Mashegu&quot;,&quot;Mokwa&quot;,&quot;Moya&quot;,&quot;Paikoro&quot;,&quot;Rafi&quot;,&quot;Rijau&quot;,&quot;Shiroro&quot;,&quot;Suleja&quot;,&quot;Tafa&quot;,&quot;Wushishi&quot;],&quot;Ekiti&quot;:[&quot;Ado Ekiti&quot;,&quot;Ekiti East&quot;,&quot;Ekiti South-West&quot;,&quot;Ekiti West&quot;,&quot;Emure&quot;,&quot;Gbonyin&quot;,&quot;Ido Osi&quot;,&quot;Ijero&quot;,&quot;Ikere&quot;,&quot;Ikole&quot;,&quot;Ilejemeje&quot;,&quot;Irepodun Ifelodun&quot;,&quot;Ise Orun&quot;,&quot;Moba&quot;,&quot;Oye&quot;],&quot;Benue&quot;:[&quot;Agatu&quot;,&quot;Apa&quot;,&quot;Ado&quot;,&quot;Buruku&quot;,&quot;Gboko&quot;,&quot;Guma&quot;,&quot;Gwer East&quot;,&quot;Gwer West&quot;,&quot;Katsina-Ala&quot;,&quot;Konshisha&quot;,&quot;Kwande&quot;,&quot;Logo&quot;,&quot;Makurdi&quot;,&quot;Obi&quot;,&quot;Ogbadibo&quot;,&quot;Ohimini&quot;,&quot;Oju&quot;,&quot;Okpokwu&quot;,&quot;Oturkpo&quot;,&quot;Tarka&quot;,&quot;Ukum&quot;,&quot;Ushongo&quot;,&quot;Vandeikya&quot;],&quot;Imo&quot;:[&quot;Aboh Mbaise&quot;,&quot;Ahiazu Mbaise&quot;,&quot;Ehime Mbano&quot;,&quot;Ezinihitte&quot;,&quot;Ideato North&quot;,&quot;Ideato South&quot;,&quot;Ihitte Uboma&quot;,&quot;Ikeduru&quot;,&quot;Isiala Mbano&quot;,&quot;Isu&quot;,&quot;Mbaitoli&quot;,&quot;Ngor Okpala&quot;,&quot;Njaba&quot;,&quot;Nkwerre&quot;,&quot;Nwangele&quot;,&quot;Obowo&quot;,&quot;Oguta&quot;,&quot;Ohaji Egbema&quot;,&quot;Okigwe&quot;,&quot;Orlu&quot;,&quot;Orsu&quot;,&quot;Oru East&quot;,&quot;Oru West&quot;,&quot;Owerri Municipal&quot;,&quot;Owerri North&quot;,&quot;Owerri West&quot;,&quot;Unuimo&quot;],&quot;Rivers&quot;:[&quot;Abua Odual&quot;,&quot;Ahoada East&quot;,&quot;Ahoada West&quot;,&quot;Akuku-Toru&quot;,&quot;Andoni&quot;,&quot;Asari-Toru&quot;,&quot;Bonny&quot;,&quot;Degema&quot;,&quot;Eleme&quot;,&quot;Emuoha&quot;,&quot;Etche&quot;,&quot;Gokana&quot;,&quot;Ikwerre&quot;,&quot;Khana&quot;,&quot;Obio Akpor&quot;,&quot;Ogba Egbema Ndoni&quot;,&quot;Ogu Bolo&quot;,&quot;Okrika&quot;,&quot;Omuma&quot;,&quot;Opobo Nkoro&quot;,&quot;Oyigbo&quot;,&quot;Port Harcourt&quot;,&quot;Tai&quot;],&quot;Sokoto&quot;:[&quot;Binji&quot;,&quot;Bodinga&quot;,&quot;Dange Shuni&quot;,&quot;Gada&quot;,&quot;Goronyo&quot;,&quot;Gudu&quot;,&quot;Gwadabawa&quot;,&quot;Illela&quot;,&quot;Isa&quot;,&quot;Kebbe&quot;,&quot;Kware&quot;,&quot;Rabah&quot;,&quot;Sabon Birni&quot;,&quot;Shagari&quot;,&quot;Silame&quot;,&quot;Sokoto North&quot;,&quot;Sokoto South&quot;,&quot;Tambuwal&quot;,&quot;Tangaza&quot;,&quot;Tureta&quot;,&quot;Wamako&quot;,&quot;Wurno&quot;,&quot;Yabo&quot;],&quot;Ondo&quot;:[&quot;Akoko North-East&quot;,&quot;Akoko North-West&quot;,&quot;Akoko South-West&quot;,&quot;Akoko South-East&quot;,&quot;Akure North&quot;,&quot;Akure South&quot;,&quot;Ese Odo&quot;,&quot;Idanre&quot;,&quot;Ifedore&quot;,&quot;Ilaje&quot;,&quot;Ile Oluji Okeigbo&quot;,&quot;Irele&quot;,&quot;Odigbo&quot;,&quot;Okitipupa&quot;,&quot;Ondo East&quot;,&quot;Ondo West&quot;,&quot;Ose&quot;,&quot;Owo&quot;],&quot;Borno&quot;:[&quot;Abadam&quot;,&quot;Askira Uba&quot;,&quot;Bama&quot;,&quot;Bayo&quot;,&quot;Biu&quot;,&quot;Chibok&quot;,&quot;Damboa&quot;,&quot;Dikwa&quot;,&quot;Gubio&quot;,&quot;Guzamala&quot;,&quot;Gwoza&quot;,&quot;Hawul&quot;,&quot;Jere&quot;,&quot;Kaga&quot;,&quot;Kala Balge&quot;,&quot;Konduga&quot;,&quot;Kukawa&quot;,&quot;Kwaya Kusar&quot;,&quot;Mafa&quot;,&quot;Magumeri&quot;,&quot;Maiduguri&quot;,&quot;Marte&quot;,&quot;Mobbar&quot;,&quot;Monguno&quot;,&quot;Ngala&quot;,&quot;Nganzai&quot;,&quot;Shani&quot;],&quot;Cross River&quot;:[&quot;Abi&quot;,&quot;Akamkpa&quot;,&quot;Akpabuyo&quot;,&quot;Bakassi&quot;,&quot;Bekwarra&quot;,&quot;Biase&quot;,&quot;Boki&quot;,&quot;Calabar Municipal&quot;,&quot;Calabar South&quot;,&quot;Etung&quot;,&quot;Ikom&quot;,&quot;Obanliku&quot;,&quot;Obubra&quot;,&quot;Obudu&quot;,&quot;Odukpani&quot;,&quot;Ogoja&quot;,&quot;Yakuur&quot;,&quot;Yala&quot;],&quot;Gombe&quot;:[&quot;Akko&quot;,&quot;Balanga&quot;,&quot;Billiri&quot;,&quot;Dukku&quot;,&quot;Funakaye&quot;,&quot;Gombe&quot;,&quot;Kaltungo&quot;,&quot;Kwami&quot;,&quot;Nafada&quot;,&quot;Shongom&quot;,&quot;Yamaltu Deba&quot;],&quot;Ogun&quot;:[&quot;Abeokuta North&quot;,&quot;Abeokuta South&quot;,&quot;Ado-Odo Ota&quot;,&quot;Egbado North&quot;,&quot;Egbado South&quot;,&quot;Ewekoro&quot;,&quot;Ifo&quot;,&quot;Ijebu East&quot;,&quot;Ijebu North&quot;,&quot;Ijebu North East&quot;,&quot;Ijebu Ode&quot;,&quot;Ikenne&quot;,&quot;Imeko Afon&quot;,&quot;Ipokia&quot;,&quot;Obafemi Owode&quot;,&quot;Odeda&quot;,&quot;Odogbolu&quot;,&quot;Ogun Waterside&quot;,&quot;Remo North&quot;,&quot;Shagamu&quot;],&quot;Delta&quot;:[&quot;Aniocha North&quot;,&quot;Aniocha South&quot;,&quot;Bomadi&quot;,&quot;Burutu&quot;,&quot;Ethiope East&quot;,&quot;Ethiope West&quot;,&quot;Ika North East&quot;,&quot;Ika South&quot;,&quot;Isoko North&quot;,&quot;Isoko South&quot;,&quot;Ndokwa East&quot;,&quot;Ndokwa West&quot;,&quot;Okpe&quot;,&quot;Oshimili North&quot;,&quot;Oshimili South&quot;,&quot;Patani&quot;,&quot;Sapele&quot;,&quot;Udu&quot;,&quot;Ughelli North&quot;,&quot;Ughelli South&quot;,&quot;Ukwuani&quot;,&quot;Uvwie&quot;,&quot;Warri North&quot;,&quot;Warri South&quot;,&quot;Warri South West&quot;],&quot;FCT&quot;:[&quot;Abaji&quot;,&quot;Bwari&quot;,&quot;Gwagwalada&quot;,&quot;Kuje&quot;,&quot;Kwali&quot;,&quot;Municipal Area Council&quot;],&quot;Osun&quot;:[&quot;Ifelodun&quot;,&quot;Irepodun&quot;,&quot;Atakunmosa East&quot;,&quot;Atakunmosa West&quot;,&quot;Aiyedaade&quot;,&quot;Aiyedire&quot;,&quot;Boluwaduro&quot;,&quot;Boripe&quot;,&quot;Ede North&quot;,&quot;Ede South&quot;,&quot;Ife Central&quot;,&quot;Ife East&quot;,&quot;Ife North&quot;,&quot;Ife South&quot;,&quot;Egbedore&quot;,&quot;Ejigbo&quot;,&quot;Ifedayo&quot;,&quot;Ila&quot;,&quot;Ilesa East&quot;,&quot;Ilesa West&quot;,&quot;Irewole&quot;,&quot;Isokan&quot;,&quot;Iwo&quot;,&quot;Obokun&quot;,&quot;Odo Otin&quot;,&quot;Ola Oluwa&quot;,&quot;Olorunda&quot;,&quot;Oriade&quot;,&quot;Orolu&quot;,&quot;Osogbo&quot;],&quot;Enugu&quot;:[&quot;Aninri&quot;,&quot;Awgu&quot;,&quot;Enugu East&quot;,&quot;Enugu North&quot;,&quot;Enugu South&quot;,&quot;Ezeagu&quot;,&quot;Igbo Etiti&quot;,&quot;Igbo Eze North&quot;,&quot;Igbo Eze South&quot;,&quot;Isi Uzo&quot;,&quot;Nkanu East&quot;,&quot;Nkanu West&quot;,&quot;Nsukka&quot;,&quot;Oji River&quot;,&quot;Udenu&quot;,&quot;Udi&quot;,&quot;Uzo Uwani&quot;],&quot;Ebonyi&quot;:[&quot;Abakaliki&quot;,&quot;Afikpo North&quot;,&quot;Afikpo South&quot;,&quot;Ebonyi&quot;,&quot;Ezza North&quot;,&quot;Ezza South&quot;,&quot;Ikwo&quot;,&quot;Ishielu&quot;,&quot;Ivo&quot;,&quot;Izzi&quot;,&quot;Ohaozara&quot;,&quot;Ohaukwu&quot;,&quot;Onicha&quot;],&quot;Kaduna&quot;:[&quot;Birnin Gwari&quot;,&quot;Chikun&quot;,&quot;Giwa&quot;,&quot;Igabi&quot;,&quot;Ikara&quot;,&quot;Jaba&quot;,&quot;Jema a&quot;,&quot;Kachia&quot;,&quot;Kaduna North&quot;,&quot;Kaduna South&quot;,&quot;Kagarko&quot;,&quot;Kajuru&quot;,&quot;Kaura&quot;,&quot;Kauru&quot;,&quot;Kubau&quot;,&quot;Kudan&quot;,&quot;Lere&quot;,&quot;Makarfi&quot;,&quot;Sabon Gari&quot;,&quot;Sanga&quot;,&quot;Soba&quot;,&quot;Zangon Kataf&quot;,&quot;Zaria&quot;],&quot;Nasarawa&quot;:[&quot;Obi&quot;,&quot;Nasarawa&quot;,&quot;Akwanga&quot;,&quot;Awe&quot;,&quot;Doma&quot;,&quot;Karu&quot;,&quot;Keana&quot;,&quot;Keffi&quot;,&quot;Kokona&quot;,&quot;Lafia&quot;,&quot;Nasarawa Egon&quot;,&quot;Toto&quot;,&quot;Wamba&quot;],&quot;Jigawa&quot;:[&quot;Auyo&quot;,&quot;Babura&quot;,&quot;Biriniwa&quot;,&quot;Birnin Kudu&quot;,&quot;Buji&quot;,&quot;Dutse&quot;,&quot;Gagarawa&quot;,&quot;Garki&quot;,&quot;Gumel&quot;,&quot;Guri&quot;,&quot;Gwaram&quot;,&quot;Gwiwa&quot;,&quot;Hadejia&quot;,&quot;Jahun&quot;,&quot;Kafin Hausa&quot;,&quot;Kazaure&quot;,&quot;Kiri Kasama&quot;,&quot;Kiyawa&quot;,&quot;Kaugama&quot;,&quot;Maigatari&quot;,&quot;Malam Madori&quot;,&quot;Miga&quot;,&quot;Ringim&quot;,&quot;Roni&quot;,&quot;Sule Tankarkar&quot;,&quot;Taura&quot;,&quot;Yankwashi&quot;],&quot;Adamawa&quot;:[&quot;Demsa&quot;,&quot;Fufure&quot;,&quot;Ganye&quot;,&quot;Gayuk&quot;,&quot;Gombi&quot;,&quot;Grie&quot;,&quot;Hong&quot;,&quot;Jada&quot;,&quot;Lamurde&quot;,&quot;Madagali&quot;,&quot;Maiha&quot;,&quot;Mayo Belwa&quot;,&quot;Michika&quot;,&quot;Mubi North&quot;,&quot;Mubi South&quot;,&quot;Numan&quot;,&quot;Shelleng&quot;,&quot;Song&quot;,&quot;Toungo&quot;,&quot;Yola North&quot;,&quot;Yola South&quot;],&quot;Kebbi&quot;:[&quot;Aleiro&quot;,&quot;Arewa Dandi&quot;,&quot;Argungu&quot;,&quot;Augie&quot;,&quot;Bagudo&quot;,&quot;Birnin Kebbi&quot;,&quot;Bunza&quot;,&quot;Dandi&quot;,&quot;Fakai&quot;,&quot;Gwandu&quot;,&quot;Jega&quot;,&quot;Kalgo&quot;,&quot;Koko Besse&quot;,&quot;Maiyama&quot;,&quot;Ngaski&quot;,&quot;Sakaba&quot;,&quot;Shanga&quot;,&quot;Suru&quot;,&quot;Wasagu Danko&quot;,&quot;Yauri&quot;,&quot;Zuru&quot;]}}},&quot;JSON_SELECT_VALUES&quot;:{&quot;CASECF9&quot;:[&quot;Abia&quot;,&quot;Adamawa&quot;,&quot;Akwa Ibom&quot;,&quot;Anambra&quot;,&quot;Bauchi&quot;,&quot;Bayelsa&quot;,&quot;Benue&quot;,&quot;Borno&quot;,&quot;Cross River&quot;,&quot;Delta&quot;,&quot;Ebonyi&quot;,&quot;Edo&quot;,&quot;Ekiti&quot;,&quot;Enugu&quot;,&quot;FCT&quot;,&quot;Gombe&quot;,&quot;Imo&quot;,&quot;Jigawa&quot;,&quot;Kaduna&quot;,&quot;Kano&quot;,&quot;Katsina&quot;,&quot;Kebbi&quot;,&quot;Kogi&quot;,&quot;Kwara&quot;,&quot;Lagos&quot;,&quot;Nasarawa&quot;,&quot;Niger&quot;,&quot;Ogun&quot;,&quot;Ondo&quot;,&quot;Osun&quot;,&quot;Oyo&quot;,&quot;Plateau&quot;,&quot;Rivers&quot;,&quot;Sokoto&quot;,&quot;Taraba&quot;,&quot;Yobe&quot;,&quot;Zamfara&quot;],&quot;CASECF4&quot;:[&quot;-None-&quot;,&quot;Aba North&quot;,&quot;Aba South&quot;,&quot;Arochukwu&quot;,&quot;Bende&quot;,&quot;Ikwuano&quot;,&quot;Isiala Ngwa North&quot;,&quot;Isiala Ngwa South&quot;,&quot;Isuikwuato&quot;,&quot;Obi Ngwa&quot;,&quot;Ohafia&quot;,&quot;Osisioma&quot;,&quot;Ugwunagbo&quot;,&quot;Ukwa East&quot;,&quot;Ukwa West&quot;,&quot;Umuahia North&quot;,&quot;Umuahia South&quot;,&quot;Umu Nneochi&quot;,&quot;Demsa&quot;,&quot;Fufure&quot;,&quot;Ganye&quot;,&quot;Gayuk&quot;,&quot;Gombi&quot;,&quot;Grie&quot;,&quot;Hong&quot;,&quot;Jada&quot;,&quot;Lamurde&quot;,&quot;Madagali&quot;,&quot;Maiha&quot;,&quot;Mayo Belwa&quot;,&quot;Michika&quot;,&quot;Mubi North&quot;,&quot;Mubi South&quot;,&quot;Numan&quot;,&quot;Shelleng&quot;,&quot;Song&quot;,&quot;Toungo&quot;,&quot;Yola North&quot;,&quot;Yola South&quot;,&quot;Abak&quot;,&quot;Eastern Obolo&quot;,&quot;Eket&quot;,&quot;Esit Eket&quot;,&quot;Essien Udim&quot;,&quot;Etim Ekpo&quot;,&quot;Etinan&quot;,&quot;Ibeno&quot;,&quot;Ibesikpo Asutan&quot;,&quot;Ibiono-Ibom&quot;,&quot;Ika&quot;,&quot;Ikono&quot;,&quot;Ikot Abasi&quot;,&quot;Ikot Ekpene&quot;,&quot;Ini&quot;,&quot;Itu&quot;,&quot;Mbo&quot;,&quot;Mkpat-Enin&quot;,&quot;Nsit-Atai&quot;,&quot;Nsit-Ibom&quot;,&quot;Nsit-Ubium&quot;,&quot;Obot Akara&quot;,&quot;Okobo&quot;,&quot;Onna&quot;,&quot;Oron&quot;,&quot;Oruk Anam&quot;,&quot;Udung-Uko&quot;,&quot;Ukanafun&quot;,&quot;Uruan&quot;,&quot;Urue-Offong Oruko&quot;,&quot;Uyo&quot;,&quot;Aguata&quot;,&quot;Anambra East&quot;,&quot;Anambra West&quot;,&quot;Anaocha&quot;,&quot;Awka North&quot;,&quot;Awka South&quot;,&quot;Ayamelum&quot;,&quot;Dunukofia&quot;,&quot;Ekwusigo&quot;,&quot;Idemili North&quot;,&quot;Idemili South&quot;,&quot;Ihiala&quot;,&quot;Njikoka&quot;,&quot;Nnewi North&quot;,&quot;Nnewi South&quot;,&quot;Ogbaru&quot;,&quot;Onitsha North&quot;,&quot;Onitsha South&quot;,&quot;Orumba North&quot;,&quot;Orumba South&quot;,&quot;Oyi&quot;,&quot;Alkaleri&quot;,&quot;Bauchi&quot;,&quot;Bogoro&quot;,&quot;Damban&quot;,&quot;Darazo&quot;,&quot;Dass&quot;,&quot;Gamawa&quot;,&quot;Ganjuwa&quot;,&quot;Giade&quot;,&quot;Itas Gadau&quot;,&quot;Jama are&quot;,&quot;Katagum&quot;,&quot;Kirfi&quot;,&quot;Misau&quot;,&quot;Ningi&quot;,&quot;Shira&quot;,&quot;Tafawa Balewa&quot;,&quot;Toro&quot;,&quot;Warji&quot;,&quot;Zaki&quot;,&quot;Brass&quot;,&quot;Ekeremor&quot;,&quot;Kolokuma Opokuma&quot;,&quot;Nembe&quot;,&quot;Ogbia&quot;,&quot;Sagbama&quot;,&quot;Southern Ijaw&quot;,&quot;Yenagoa&quot;,&quot;Agatu&quot;,&quot;Apa&quot;,&quot;Ado&quot;,&quot;Buruku&quot;,&quot;Gboko&quot;,&quot;Guma&quot;,&quot;Gwer East&quot;,&quot;Gwer West&quot;,&quot;Katsina-Ala&quot;,&quot;Konshisha&quot;,&quot;Kwande&quot;,&quot;Logo&quot;,&quot;Makurdi&quot;,&quot;Obi&quot;,&quot;Ogbadibo&quot;,&quot;Ohimini&quot;,&quot;Oju&quot;,&quot;Okpokwu&quot;,&quot;Oturkpo&quot;,&quot;Tarka&quot;,&quot;Ukum&quot;,&quot;Ushongo&quot;,&quot;Vandeikya&quot;,&quot;Abadam&quot;,&quot;Askira Uba&quot;,&quot;Bama&quot;,&quot;Bayo&quot;,&quot;Biu&quot;,&quot;Chibok&quot;,&quot;Damboa&quot;,&quot;Dikwa&quot;,&quot;Gubio&quot;,&quot;Guzamala&quot;,&quot;Gwoza&quot;,&quot;Hawul&quot;,&quot;Jere&quot;,&quot;Kaga&quot;,&quot;Kala Balge&quot;,&quot;Konduga&quot;,&quot;Kukawa&quot;,&quot;Kwaya Kusar&quot;,&quot;Mafa&quot;,&quot;Magumeri&quot;,&quot;Maiduguri&quot;,&quot;Marte&quot;,&quot;Mobbar&quot;,&quot;Monguno&quot;,&quot;Ngala&quot;,&quot;Nganzai&quot;,&quot;Shani&quot;,&quot;Abi&quot;,&quot;Akamkpa&quot;,&quot;Akpabuyo&quot;,&quot;Bakassi&quot;,&quot;Bekwarra&quot;,&quot;Biase&quot;,&quot;Boki&quot;,&quot;Calabar Municipal&quot;,&quot;Calabar South&quot;,&quot;Etung&quot;,&quot;Ikom&quot;,&quot;Obanliku&quot;,&quot;Obubra&quot;,&quot;Obudu&quot;,&quot;Odukpani&quot;,&quot;Ogoja&quot;,&quot;Yakuur&quot;,&quot;Yala&quot;,&quot;Aniocha North&quot;,&quot;Aniocha South&quot;,&quot;Bomadi&quot;,&quot;Burutu&quot;,&quot;Ethiope East&quot;,&quot;Ethiope West&quot;,&quot;Ika North East&quot;,&quot;Ika South&quot;,&quot;Isoko North&quot;,&quot;Isoko South&quot;,&quot;Ndokwa East&quot;,&quot;Ndokwa West&quot;,&quot;Okpe&quot;,&quot;Oshimili North&quot;,&quot;Oshimili South&quot;,&quot;Patani&quot;,&quot;Sapele&quot;,&quot;Udu&quot;,&quot;Ughelli North&quot;,&quot;Ughelli South&quot;,&quot;Ukwuani&quot;,&quot;Uvwie&quot;,&quot;Warri North&quot;,&quot;Warri South&quot;,&quot;Warri South West&quot;,&quot;Abakaliki&quot;,&quot;Afikpo North&quot;,&quot;Afikpo South&quot;,&quot;Ebonyi&quot;,&quot;Ezza North&quot;,&quot;Ezza South&quot;,&quot;Ikwo&quot;,&quot;Ishielu&quot;,&quot;Ivo&quot;,&quot;Izzi&quot;,&quot;Ohaozara&quot;,&quot;Ohaukwu&quot;,&quot;Onicha&quot;,&quot;Akoko-Edo&quot;,&quot;Egor&quot;,&quot;Esan Central&quot;,&quot;Esan North-East&quot;,&quot;Esan South-East&quot;,&quot;Esan West&quot;,&quot;Etsako Central&quot;,&quot;Etsako East&quot;,&quot;Etsako West&quot;,&quot;Igueben&quot;,&quot;Ikpoba Okha&quot;,&quot;Orhionmwon&quot;,&quot;Oredo&quot;,&quot;Ovia North-East&quot;,&quot;Ovia South-West&quot;,&quot;Owan East&quot;,&quot;Owan West&quot;,&quot;Uhunmwonde&quot;,&quot;Ado Ekiti&quot;,&quot;Efon&quot;,&quot;Ekiti East&quot;,&quot;Ekiti South-West&quot;,&quot;Ekiti West&quot;,&quot;Emure&quot;,&quot;Gbonyin&quot;,&quot;Ido Osi&quot;,&quot;Ijero&quot;,&quot;Ikere&quot;,&quot;Ikole&quot;,&quot;Ilejemeje&quot;,&quot;Irepodun Ifelodun&quot;,&quot;Ise Orun&quot;,&quot;Moba&quot;,&quot;Oye&quot;,&quot;Aninri&quot;,&quot;Awgu&quot;,&quot;Enugu East&quot;,&quot;Enugu North&quot;,&quot;Enugu South&quot;,&quot;Ezeagu&quot;,&quot;Igbo Etiti&quot;,&quot;Igbo Eze North&quot;,&quot;Igbo Eze South&quot;,&quot;Isi Uzo&quot;,&quot;Nkanu East&quot;,&quot;Nkanu West&quot;,&quot;Nsukka&quot;,&quot;Oji River&quot;,&quot;Udenu&quot;,&quot;Udi&quot;,&quot;Uzo Uwani&quot;,&quot;Abaji&quot;,&quot;Bwari&quot;,&quot;Gwagwalada&quot;,&quot;Kuje&quot;,&quot;Kwali&quot;,&quot;Municipal Area Council&quot;,&quot;Akko&quot;,&quot;Balanga&quot;,&quot;Billiri&quot;,&quot;Dukku&quot;,&quot;Funakaye&quot;,&quot;Gombe&quot;,&quot;Kaltungo&quot;,&quot;Kwami&quot;,&quot;Nafada&quot;,&quot;Shongom&quot;,&quot;Yamaltu Deba&quot;,&quot;Aboh Mbaise&quot;,&quot;Ahiazu Mbaise&quot;,&quot;Ehime Mbano&quot;,&quot;Ezinihitte&quot;,&quot;Ideato North&quot;,&quot;Ideato South&quot;,&quot;Ihitte Uboma&quot;,&quot;Ikeduru&quot;,&quot;Isiala Mbano&quot;,&quot;Isu&quot;,&quot;Mbaitoli&quot;,&quot;Ngor Okpala&quot;,&quot;Njaba&quot;,&quot;Nkwerre&quot;,&quot;Nwangele&quot;,&quot;Obowo&quot;,&quot;Oguta&quot;,&quot;Ohaji Egbema&quot;,&quot;Okigwe&quot;,&quot;Orlu&quot;,&quot;Orsu&quot;,&quot;Oru East&quot;,&quot;Oru West&quot;,&quot;Owerri Municipal&quot;,&quot;Owerri North&quot;,&quot;Owerri West&quot;,&quot;Unuimo&quot;,&quot;Auyo&quot;,&quot;Babura&quot;,&quot;Biriniwa&quot;,&quot;Birnin Kudu&quot;,&quot;Buji&quot;,&quot;Dutse&quot;,&quot;Gagarawa&quot;,&quot;Garki&quot;,&quot;Gumel&quot;,&quot;Guri&quot;,&quot;Gwaram&quot;,&quot;Gwiwa&quot;,&quot;Hadejia&quot;,&quot;Jahun&quot;,&quot;Kafin Hausa&quot;,&quot;Kazaure&quot;,&quot;Kiri Kasama&quot;,&quot;Kiyawa&quot;,&quot;Kaugama&quot;,&quot;Maigatari&quot;,&quot;Malam Madori&quot;,&quot;Miga&quot;,&quot;Ringim&quot;,&quot;Roni&quot;,&quot;Sule Tankarkar&quot;,&quot;Taura&quot;,&quot;Yankwashi&quot;,&quot;Birnin Gwari&quot;,&quot;Chikun&quot;,&quot;Giwa&quot;,&quot;Igabi&quot;,&quot;Ikara&quot;,&quot;Jaba&quot;,&quot;Jema a&quot;,&quot;Kachia&quot;,&quot;Kaduna North&quot;,&quot;Kaduna South&quot;,&quot;Kagarko&quot;,&quot;Kajuru&quot;,&quot;Kaura&quot;,&quot;Kauru&quot;,&quot;Kubau&quot;,&quot;Kudan&quot;,&quot;Lere&quot;,&quot;Makarfi&quot;,&quot;Sabon Gari&quot;,&quot;Sanga&quot;,&quot;Soba&quot;,&quot;Zangon Kataf&quot;,&quot;Zaria&quot;,&quot;Ajingi&quot;,&quot;Albasu&quot;,&quot;Bagwai&quot;,&quot;Bebeji&quot;,&quot;Bichi&quot;,&quot;Bunkure&quot;,&quot;Dala&quot;,&quot;Dambatta&quot;,&quot;Dawakin Kudu&quot;,&quot;Dawakin Tofa&quot;,&quot;Doguwa&quot;,&quot;Fagge&quot;,&quot;Gabasawa&quot;,&quot;Garko&quot;,&quot;Garun Mallam&quot;,&quot;Gaya&quot;,&quot;Gezawa&quot;,&quot;Gwale&quot;,&quot;Gwarzo&quot;,&quot;Kabo&quot;,&quot;Kano Municipal&quot;,&quot;Karaye&quot;,&quot;Kibiya&quot;,&quot;Kiru&quot;,&quot;Kumbotso&quot;,&quot;Kunchi&quot;,&quot;Kura&quot;,&quot;Madobi&quot;,&quot;Makoda&quot;,&quot;Minjibir&quot;,&quot;Nasarawa&quot;,&quot;Rano&quot;,&quot;Rimin Gado&quot;,&quot;Rogo&quot;,&quot;Shanono&quot;,&quot;Sumaila&quot;,&quot;Takai&quot;,&quot;Tarauni&quot;,&quot;Tofa&quot;,&quot;Tsanyawa&quot;,&quot;Tudun Wada&quot;,&quot;Ungogo&quot;,&quot;Warawa&quot;,&quot;Wudil&quot;,&quot;Bakori&quot;,&quot;Batagarawa&quot;,&quot;Batsari&quot;,&quot;Baure&quot;,&quot;Bindawa&quot;,&quot;Charanchi&quot;,&quot;Dandume&quot;,&quot;Danja&quot;,&quot;Dan Musa&quot;,&quot;Daura&quot;,&quot;Dutsi&quot;,&quot;Dutsin Ma&quot;,&quot;Faskari&quot;,&quot;Funtua&quot;,&quot;Ingawa&quot;,&quot;Jibia&quot;,&quot;Kafur&quot;,&quot;Kaita&quot;,&quot;Kankara&quot;,&quot;Kankia&quot;,&quot;Katsina&quot;,&quot;Kurfi&quot;,&quot;Kusada&quot;,&quot;Mai Adua&quot;,&quot;Malumfashi&quot;,&quot;Mani&quot;,&quot;Mashi&quot;,&quot;Matazu&quot;,&quot;Musawa&quot;,&quot;Rimi&quot;,&quot;Sabuwa&quot;,&quot;Safana&quot;,&quot;Sandamu&quot;,&quot;Zango&quot;,&quot;Aleiro&quot;,&quot;Arewa Dandi&quot;,&quot;Argungu&quot;,&quot;Augie&quot;,&quot;Bagudo&quot;,&quot;Birnin Kebbi&quot;,&quot;Bunza&quot;,&quot;Dandi&quot;,&quot;Fakai&quot;,&quot;Gwandu&quot;,&quot;Jega&quot;,&quot;Kalgo&quot;,&quot;Koko Besse&quot;,&quot;Maiyama&quot;,&quot;Ngaski&quot;,&quot;Sakaba&quot;,&quot;Shanga&quot;,&quot;Suru&quot;,&quot;Wasagu Danko&quot;,&quot;Yauri&quot;,&quot;Zuru&quot;,&quot;Adavi&quot;,&quot;Ajaokuta&quot;,&quot;Ankpa&quot;,&quot;Bassa&quot;,&quot;Dekina&quot;,&quot;Ibaji&quot;,&quot;Idah&quot;,&quot;Igalamela Odolu&quot;,&quot;Ijumu&quot;,&quot;Kabba Bunu&quot;,&quot;Kogi&quot;,&quot;Lokoja&quot;,&quot;Mopa Muro&quot;,&quot;Ofu&quot;,&quot;Ogori Magongo&quot;,&quot;Okehi&quot;,&quot;Okene&quot;,&quot;Olamaboro&quot;,&quot;Omala&quot;,&quot;Yagba East&quot;,&quot;Yagba West&quot;,&quot;Asa&quot;,&quot;Baruten&quot;,&quot;Edu&quot;,&quot;Ekiti&quot;,&quot;Ifelodun&quot;,&quot;Ilorin East&quot;,&quot;Ilorin South&quot;,&quot;Ilorin West&quot;,&quot;Irepodun&quot;,&quot;Isin&quot;,&quot;Kaiama&quot;,&quot;Moro&quot;,&quot;Offa&quot;,&quot;Oke Ero&quot;,&quot;Oyun&quot;,&quot;Pategi&quot;,&quot;Agege&quot;,&quot;Ajeromi-Ifelodun&quot;,&quot;Alimosho&quot;,&quot;Amuwo-Odofin&quot;,&quot;Apapa&quot;,&quot;Badagry&quot;,&quot;Epe&quot;,&quot;Eti Osa&quot;,&quot;Ibeju-Lekki&quot;,&quot;Ifako-Ijaiye&quot;,&quot;Ikeja&quot;,&quot;Ikorodu&quot;,&quot;Island&quot;,&quot;Kosofe&quot;,&quot;Mainland&quot;,&quot;Mushin&quot;,&quot;Ojo&quot;,&quot;Oshodi-Isolo&quot;,&quot;Shomolu&quot;,&quot;Surulere&quot;,&quot;Akwanga&quot;,&quot;Awe&quot;,&quot;Doma&quot;,&quot;Karu&quot;,&quot;Keana&quot;,&quot;Keffi&quot;,&quot;Kokona&quot;,&quot;Lafia&quot;,&quot;Nasarawa Egon&quot;,&quot;Toto&quot;,&quot;Wamba&quot;,&quot;Agaie&quot;,&quot;Agwara&quot;,&quot;Bida&quot;,&quot;Borgu&quot;,&quot;Bosso&quot;,&quot;Chanchaga&quot;,&quot;Edati&quot;,&quot;Gbako&quot;,&quot;Gurara&quot;,&quot;Katcha&quot;,&quot;Kontagora&quot;,&quot;Lapai&quot;,&quot;Lavun&quot;,&quot;Magama&quot;,&quot;Mariga&quot;,&quot;Mashegu&quot;,&quot;Mokwa&quot;,&quot;Moya&quot;,&quot;Paikoro&quot;,&quot;Rafi&quot;,&quot;Rijau&quot;,&quot;Shiroro&quot;,&quot;Suleja&quot;,&quot;Tafa&quot;,&quot;Wushishi&quot;,&quot;Abeokuta North&quot;,&quot;Abeokuta South&quot;,&quot;Ado-Odo Ota&quot;,&quot;Egbado North&quot;,&quot;Egbado South&quot;,&quot;Ewekoro&quot;,&quot;Ifo&quot;,&quot;Ijebu East&quot;,&quot;Ijebu North&quot;,&quot;Ijebu North East&quot;,&quot;Ijebu Ode&quot;,&quot;Ikenne&quot;,&quot;Imeko Afon&quot;,&quot;Ipokia&quot;,&quot;Obafemi Owode&quot;,&quot;Odeda&quot;,&quot;Odogbolu&quot;,&quot;Ogun Waterside&quot;,&quot;Remo North&quot;,&quot;Shagamu&quot;,&quot;Akoko North-East&quot;,&quot;Akoko North-West&quot;,&quot;Akoko South-West&quot;,&quot;Akoko South-East&quot;,&quot;Akure North&quot;,&quot;Akure South&quot;,&quot;Ese Odo&quot;,&quot;Idanre&quot;,&quot;Ifedore&quot;,&quot;Ilaje&quot;,&quot;Ile Oluji Okeigbo&quot;,&quot;Irele&quot;,&quot;Odigbo&quot;,&quot;Okitipupa&quot;,&quot;Ondo East&quot;,&quot;Ondo West&quot;,&quot;Ose&quot;,&quot;Owo&quot;,&quot;Atakunmosa East&quot;,&quot;Atakunmosa West&quot;,&quot;Aiyedaade&quot;,&quot;Aiyedire&quot;,&quot;Boluwaduro&quot;,&quot;Boripe&quot;,&quot;Ede North&quot;,&quot;Ede South&quot;,&quot;Ife Central&quot;,&quot;Ife East&quot;,&quot;Ife North&quot;,&quot;Ife South&quot;,&quot;Egbedore&quot;,&quot;Ejigbo&quot;,&quot;Ifedayo&quot;,&quot;Ila&quot;,&quot;Ilesa East&quot;,&quot;Ilesa West&quot;,&quot;Irewole&quot;,&quot;Isokan&quot;,&quot;Iwo&quot;,&quot;Obokun&quot;,&quot;Odo Otin&quot;,&quot;Ola Oluwa&quot;,&quot;Olorunda&quot;,&quot;Oriade&quot;,&quot;Orolu&quot;,&quot;Osogbo&quot;,&quot;Afijio&quot;,&quot;Akinyele&quot;,&quot;Atiba&quot;,&quot;Atisbo&quot;,&quot;Egbeda&quot;,&quot;Ibadan North&quot;,&quot;Ibadan North-East&quot;,&quot;Ibadan North-West&quot;,&quot;Ibadan South-East&quot;,&quot;Ibadan South-West&quot;,&quot;Ibarapa Central&quot;,&quot;Ibarapa East&quot;,&quot;Ibarapa North&quot;,&quot;Ido&quot;,&quot;Irepo&quot;,&quot;Iseyin&quot;,&quot;Itesiwaju&quot;,&quot;Iwajowa&quot;,&quot;Kajola&quot;,&quot;Lagelu&quot;,&quot;Ogbomosho North&quot;,&quot;Ogbomosho South&quot;,&quot;Ogo Oluwa&quot;,&quot;Olorunsogo&quot;,&quot;Oluyole&quot;,&quot;Ona Ara&quot;,&quot;Orelope&quot;,&quot;Ori Ire&quot;,&quot;Oyo&quot;,&quot;Oyo East&quot;,&quot;Saki East&quot;,&quot;Saki West&quot;,&quot;Bokkos&quot;,&quot;Barkin Ladi&quot;,&quot;Jos East&quot;,&quot;Jos North&quot;,&quot;Jos South&quot;,&quot;Kanam&quot;,&quot;Kanke&quot;,&quot;Langtang South&quot;,&quot;Langtang North&quot;,&quot;Mangu&quot;,&quot;Mikang&quot;,&quot;Pankshin&quot;,&quot;Qua an Pan&quot;,&quot;Riyom&quot;,&quot;Shendam&quot;,&quot;Wase&quot;,&quot;Abua Odual&quot;,&quot;Ahoada East&quot;,&quot;Ahoada West&quot;,&quot;Akuku-Toru&quot;,&quot;Andoni&quot;,&quot;Asari-Toru&quot;,&quot;Bonny&quot;,&quot;Degema&quot;,&quot;Eleme&quot;,&quot;Emuoha&quot;,&quot;Etche&quot;,&quot;Gokana&quot;,&quot;Ikwerre&quot;,&quot;Khana&quot;,&quot;Obio Akpor&quot;,&quot;Ogba Egbema Ndoni&quot;,&quot;Ogu Bolo&quot;,&quot;Okrika&quot;,&quot;Omuma&quot;,&quot;Opobo Nkoro&quot;,&quot;Oyigbo&quot;,&quot;Port Harcourt&quot;,&quot;Tai&quot;,&quot;Binji&quot;,&quot;Bodinga&quot;,&quot;Dange Shuni&quot;,&quot;Gada&quot;,&quot;Goronyo&quot;,&quot;Gudu&quot;,&quot;Gwadabawa&quot;,&quot;Illela&quot;,&quot;Isa&quot;,&quot;Kebbe&quot;,&quot;Kware&quot;,&quot;Rabah&quot;,&quot;Sabon Birni&quot;,&quot;Shagari&quot;,&quot;Silame&quot;,&quot;Sokoto North&quot;,&quot;Sokoto South&quot;,&quot;Tambuwal&quot;,&quot;Tangaza&quot;,&quot;Tureta&quot;,&quot;Wamako&quot;,&quot;Wurno&quot;,&quot;Yabo&quot;,&quot;Ardo Kola&quot;,&quot;Bali&quot;,&quot;Donga&quot;,&quot;Gashaka&quot;,&quot;Gassol&quot;,&quot;Ibi&quot;,&quot;Jalingo&quot;,&quot;Karim Lamido&quot;,&quot;Kumi&quot;,&quot;Lau&quot;,&quot;Sardauna&quot;,&quot;Takum&quot;,&quot;Ussa&quot;,&quot;Wukari&quot;,&quot;Yorro&quot;,&quot;Zing&quot;,&quot;Bade&quot;,&quot;Bursari&quot;,&quot;Damaturu&quot;,&quot;Fika&quot;,&quot;Fune&quot;,&quot;Geidam&quot;,&quot;Gujba&quot;,&quot;Gulani&quot;,&quot;Jakusko&quot;,&quot;Karasuwa&quot;,&quot;Machina&quot;,&quot;Nangere&quot;,&quot;Nguru&quot;,&quot;Potiskum&quot;,&quot;Tarmuwa&quot;,&quot;Yunusari&quot;,&quot;Yusufari&quot;,&quot;Anka&quot;,&quot;Bakura&quot;,&quot;Birnin Magaji Kiyaw&quot;,&quot;Bukkuyum&quot;,&quot;Bungudu&quot;,&quot;Gummi&quot;,&quot;Gusau&quot;,&quot;Kaura Namoda&quot;,&quot;Maradun&quot;,&quot;Maru&quot;,&quot;Shinkafi&quot;,&quot;Talata Mafara&quot;,&quot;Chafe&quot;,&quot;Zurmi&quot;]},&quot;JSON_MAP_DEP_LABELS&quot;:[&quot;CASECF9&quot;]}"> <input type="hidden" name="returnURL" value="*">
+    <!-- LEFT BOX -->
+	<div class="col-sm-6 col-md-6 col-lg-6">
+		<div class="form-group">
+			<label for="fname">First Name: (<span>*</span>) </label>
+			<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your first name..." required="">
+		</div>
+		<div class="form-group">
+			<label for="lname">Last Name: (<span>*</span>) </label>
+			<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your last name..." required="">
+        </div>
+		<div class="form-group">
+            <label for="birthdate">Date of Birth: (<span>*</span>) </label>
+            <input type="text" class="form-control hasDatepicker" name="birthdate" id="birthdate" placeholder="Enter your date of birth..." required="" onkeypress="return false;">
+        </div>        
+		<div class="form-group">
+			<label for="gender">Gender:</label><br>
+            <select name="gender" value="" class="form-control" onchange="setDependent(this, false)" id="CASECF6">
+                <option value="">- Please choose -</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>        
+		<div class="form-group">
+			<label for="mobilephone">
+                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Phone format must start with +234"></i> 
+                Mobile Phone: (<span>*</span>)
+            </label>
+			<input type="text" class="form-control phone" id="mobilephone" name="mobilephone" placeholder="Enter your phone number" value="+234" required="" maxlength="17">
+        </div>
+		<div class="form-group">
+			<label for="email">Email:(<span>*</span>)</label>
+			<input type="text" class="form-control" id="email" name="email" placeholder="Enter your email address" required="">
+        </div>
+		<div class="form-group">
+			<label for="shopaddress">
+                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Please provide us Building No, Street 1, Street 2, City"></i>
+                Prospect Shop Address:(<span>*</span>)</label>
+			<textarea class="form-control shop-textarea" name="shopaddress" id="shopaddress" rows="5"></textarea>
+        </div>        
+    </div>
+    <!-- LEFT BOX -->
+    <!-- RIGHT BOX -->
+	<div class="col-sm-6 col-md-6 col-lg-6">        
+		<div class="form-group">
+			<label for="landmark">
+                <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Please give us the closest Landmark to your Shop"></i> Landmark:
+            </label>
+			<textarea class="form-control landmark-textarea" name="landmark" id="landmark" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="shopstate">Shop State:(<span>*</span>)</label><br>
+            <select name="shopstate" value="" class="form-control manfieldbdr" onchange="setDependent(this, false)" id="CASECF9" required="">
+                <option value="">- Undefined -</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="FCT">FCT</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="lga">LGA:(<span>*</span>)</label><br>
+            <select name="lga" value="" class="form-control manfieldbdr" onchange="setDependent(this, false)" id="CASECF4" required="">
+                <option value="">- Undefined -</option>
+                <option value="Aba North">Aba North</option>
+                <option value="Aba South">Aba South</option>
+                <option value="Arochukwu">Arochukwu</option>
+                <option value="Bende">Bende</option>
+                <option value="Ikwuano">Ikwuano</option>
+                <option value="Isiala Ngwa North">Isiala Ngwa North</option>
+                <option value="Isiala Ngwa South">Isiala Ngwa South</option>
+                <option value="Isuikwuato">Isuikwuato</option>
+                <option value="Obi Ngwa">Obi Ngwa</option>
+                <option value="Ohafia">Ohafia</option>
+                <option value="Osisioma">Osisioma</option>
+                <option value="Ugwunagbo">Ugwunagbo</option>
+                <option value="Ukwa East">Ukwa East</option>
+                <option value="Ukwa West">Ukwa West</option>
+                <option value="Umuahia North">Umuahia North</option>
+                <option value="Umuahia South">Umuahia South</option>
+                <option value="Umu Nneochi">Umu Nneochi</option>
+                <option value="Demsa">Demsa</option>
+                <option value="Fufure">Fufure</option>
+                <option value="Ganye">Ganye</option>
+                <option value="Gayuk">Gayuk</option>
+                <option value="Gombi">Gombi</option>
+                <option value="Grie">Grie</option>
+                <option value="Hong">Hong</option>
+                <option value="Jada">Jada</option>
+                <option value="Lamurde">Lamurde</option>
+                <option value="Madagali">Madagali</option>
+                <option value="Maiha">Maiha</option>
+                <option value="Mayo Belwa">Mayo Belwa</option>
+                <option value="Michika">Michika</option>
+                <option value="Mubi North">Mubi North</option>
+                <option value="Mubi South">Mubi South</option>
+                <option value="Numan">Numan</option>
+                <option value="Shelleng">Shelleng</option>
+                <option value="Song">Song</option>
+                <option value="Toungo">Toungo</option>
+                <option value="Yola North">Yola North</option>
+                <option value="Yola South">Yola South</option>
+                <option value="Abak">Abak</option>
+                <option value="Eastern Obolo">Eastern Obolo</option>
+                <option value="Eket">Eket</option>
+                <option value="Esit Eket">Esit Eket</option>
+                <option value="Essien Udim">Essien Udim</option>
+                <option value="Etim Ekpo">Etim Ekpo</option>
+                <option value="Etinan">Etinan</option>
+                <option value="Ibeno">Ibeno</option>
+                <option value="Ibesikpo Asutan">Ibesikpo Asutan</option>
+                <option value="Ibiono-Ibom">Ibiono-Ibom</option>
+                <option value="Ika">Ika</option>
+                <option value="Ikono">Ikono</option>
+                <option value="Ikot Abasi">Ikot Abasi</option>
+                <option value="Ikot Ekpene">Ikot Ekpene</option>
+                <option value="Ini">Ini</option>
+                <option value="Itu">Itu</option>
+                <option value="Mbo">Mbo</option>
+                <option value="Mkpat-Enin">Mkpat-Enin</option>
+                <option value="Nsit-Atai">Nsit-Atai</option>
+                <option value="Nsit-Ibom">Nsit-Ibom</option>
+                <option value="Nsit-Ubium">Nsit-Ubium</option>
+                <option value="Obot Akara">Obot Akara</option>
+                <option value="Okobo">Okobo</option>
+                <option value="Onna">Onna</option>
+                <option value="Oron">Oron</option>
+                <option value="Oruk Anam">Oruk Anam</option>
+                <option value="Udung-Uko">Udung-Uko</option>
+                <option value="Ukanafun">Ukanafun</option>
+                <option value="Uruan">Uruan</option>
+                <option value="Urue-Offong Oruko">Urue-Offong Oruko</option>
+                <option value="Uyo">Uyo</option>
+                <option value="Aguata">Aguata</option>
+                <option value="Anambra East">Anambra East</option>
+                <option value="Anambra West">Anambra West</option>
+                <option value="Anaocha">Anaocha</option>
+                <option value="Awka North">Awka North</option>
+                <option value="Awka South">Awka South</option>
+                <option value="Ayamelum">Ayamelum</option>
+                <option value="Dunukofia">Dunukofia</option>
+                <option value="Ekwusigo">Ekwusigo</option>
+                <option value="Idemili North">Idemili North</option>
+                <option value="Idemili South">Idemili South</option>
+                <option value="Ihiala">Ihiala</option>
+                <option value="Njikoka">Njikoka</option>
+                <option value="Nnewi North">Nnewi North</option>
+                <option value="Nnewi South">Nnewi South</option>
+                <option value="Ogbaru">Ogbaru</option>
+                <option value="Onitsha North">Onitsha North</option>
+                <option value="Onitsha South">Onitsha South</option>
+                <option value="Orumba North">Orumba North</option>
+                <option value="Orumba South">Orumba South</option>
+                <option value="Oyi">Oyi</option>
+                <option value="Alkaleri">Alkaleri</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bogoro">Bogoro</option>
+                <option value="Damban">Damban</option>
+                <option value="Darazo">Darazo</option>
+                <option value="Dass">Dass</option>
+                <option value="Gamawa">Gamawa</option>
+                <option value="Ganjuwa">Ganjuwa</option>
+                <option value="Giade">Giade</option>
+                <option value="Itas Gadau">Itas Gadau</option>
+                <option value="Jama are">Jama are</option>
+                <option value="Katagum">Katagum</option>
+                <option value="Kirfi">Kirfi</option>
+                <option value="Misau">Misau</option>
+                <option value="Ningi">Ningi</option>
+                <option value="Shira">Shira</option>
+                <option value="Tafawa Balewa">Tafawa Balewa</option>
+                <option value="Toro">Toro</option>
+                <option value="Warji">Warji</option>
+                <option value="Zaki">Zaki</option>
+                <option value="Brass">Brass</option>
+                <option value="Ekeremor">Ekeremor</option>
+                <option value="Kolokuma Opokuma">Kolokuma Opokuma</option>
+                <option value="Nembe">Nembe</option>
+                <option value="Ogbia">Ogbia</option>
+                <option value="Sagbama">Sagbama</option>
+                <option value="Southern Ijaw">Southern Ijaw</option>
+                <option value="Yenagoa">Yenagoa</option>
+                <option value="Agatu">Agatu</option>
+                <option value="Apa">Apa</option>
+                <option value="Ado">Ado</option>
+                <option value="Buruku">Buruku</option>
+                <option value="Gboko">Gboko</option>
+                <option value="Guma">Guma</option>
+                <option value="Gwer East">Gwer East</option>
+                <option value="Gwer West">Gwer West</option>
+                <option value="Katsina-Ala">Katsina-Ala</option>
+                <option value="Konshisha">Konshisha</option>
+                <option value="Kwande">Kwande</option>
+                <option value="Logo">Logo</option>
+                <option value="Makurdi">Makurdi</option>
+                <option value="Obi">Obi</option>
+                <option value="Ogbadibo">Ogbadibo</option>
+                <option value="Ohimini">Ohimini</option>
+                <option value="Oju">Oju</option>
+                <option value="Okpokwu">Okpokwu</option>
+                <option value="Oturkpo">Oturkpo</option>
+                <option value="Tarka">Tarka</option>
+                <option value="Ukum">Ukum</option>
+                <option value="Ushongo">Ushongo</option>
+                <option value="Vandeikya">Vandeikya</option>
+                <option value="Abadam">Abadam</option>
+                <option value="Askira Uba">Askira Uba</option>
+                <option value="Bama">Bama</option>
+                <option value="Bayo">Bayo</option>
+                <option value="Biu">Biu</option>
+                <option value="Chibok">Chibok</option>
+                <option value="Damboa">Damboa</option>
+                <option value="Dikwa">Dikwa</option>
+                <option value="Gubio">Gubio</option>
+                <option value="Guzamala">Guzamala</option>
+                <option value="Gwoza">Gwoza</option>
+                <option value="Hawul">Hawul</option>
+                <option value="Jere">Jere</option>
+                <option value="Kaga">Kaga</option>
+                <option value="Kala Balge">Kala Balge</option>
+                <option value="Konduga">Konduga</option>
+                <option value="Kukawa">Kukawa</option>
+                <option value="Kwaya Kusar">Kwaya Kusar</option>
+                <option value="Mafa">Mafa</option>
+                <option value="Magumeri">Magumeri</option>
+                <option value="Maiduguri">Maiduguri</option>
+                <option value="Marte">Marte</option>
+                <option value="Mobbar">Mobbar</option>
+                <option value="Monguno">Monguno</option>
+                <option value="Ngala">Ngala</option>
+                <option value="Nganzai">Nganzai</option>
+                <option value="Shani">Shani</option>
+                <option value="Abi">Abi</option>
+                <option value="Akamkpa">Akamkpa</option>
+                <option value="Akpabuyo">Akpabuyo</option>
+                <option value="Bakassi">Bakassi</option>
+                <option value="Bekwarra">Bekwarra</option>
+                <option value="Biase">Biase</option>
+                <option value="Boki">Boki</option>
+                <option value="Calabar Municipal">Calabar Municipal</option>
+                <option value="Calabar South">Calabar South</option>
+                <option value="Etung">Etung</option>
+                <option value="Ikom">Ikom</option>
+                <option value="Obanliku">Obanliku</option>
+                <option value="Obubra">Obubra</option>
+                <option value="Obudu">Obudu</option>
+                <option value="Odukpani">Odukpani</option>
+                <option value="Ogoja">Ogoja</option>
+                <option value="Yakuur">Yakuur</option>
+                <option value="Yala">Yala</option>
+                <option value="Aniocha North">Aniocha North</option>
+                <option value="Aniocha South">Aniocha South</option>
+                <option value="Bomadi">Bomadi</option>
+                <option value="Burutu">Burutu</option>
+                <option value="Ethiope East">Ethiope East</option>
+                <option value="Ethiope West">Ethiope West</option>
+                <option value="Ika North East">Ika North East</option>
+                <option value="Ika South">Ika South</option>
+                <option value="Isoko North">Isoko North</option>
+                <option value="Isoko South">Isoko South</option>
+                <option value="Ndokwa East">Ndokwa East</option>
+                <option value="Ndokwa West">Ndokwa West</option>
+                <option value="Okpe">Okpe</option>
+                <option value="Oshimili North">Oshimili North</option>
+                <option value="Oshimili South">Oshimili South</option>
+                <option value="Patani">Patani</option>
+                <option value="Sapele">Sapele</option>
+                <option value="Udu">Udu</option>
+                <option value="Ughelli North">Ughelli North</option>
+                <option value="Ughelli South">Ughelli South</option>
+                <option value="Ukwuani">Ukwuani</option>
+                <option value="Uvwie">Uvwie</option>
+                <option value="Warri North">Warri North</option>
+                <option value="Warri South">Warri South</option>
+                <option value="Warri South West">Warri South West</option>
+                <option value="Abakaliki">Abakaliki</option>
+                <option value="Afikpo North">Afikpo North</option>
+                <option value="Afikpo South">Afikpo South</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Ezza North">Ezza North</option>
+                <option value="Ezza South">Ezza South</option>
+                <option value="Ikwo">Ikwo</option>
+                <option value="Ishielu">Ishielu</option>
+                <option value="Ivo">Ivo</option>
+                <option value="Izzi">Izzi</option>
+                <option value="Ohaozara">Ohaozara</option>
+                <option value="Ohaukwu">Ohaukwu</option>
+                <option value="Onicha">Onicha</option>
+                <option value="Akoko-Edo">Akoko-Edo</option>
+                <option value="Egor">Egor</option>
+                <option value="Esan Central">Esan Central</option>
+                <option value="Esan North-East">Esan North-East</option>
+                <option value="Esan South-East">Esan South-East</option>
+                <option value="Esan West">Esan West</option>
+                <option value="Etsako Central">Etsako Central</option>
+                <option value="Etsako East">Etsako East</option>
+                <option value="Etsako West">Etsako West</option>
+                <option value="Igueben">Igueben</option>
+                <option value="Ikpoba Okha">Ikpoba Okha</option>
+                <option value="Orhionmwon">Orhionmwon</option>
+                <option value="Oredo">Oredo</option>
+                <option value="Ovia North-East">Ovia North-East</option>
+                <option value="Ovia South-West">Ovia South-West</option>
+                <option value="Owan East">Owan East</option>
+                <option value="Owan West">Owan West</option>
+                <option value="Uhunmwonde">Uhunmwonde</option>
+                <option value="Ado Ekiti">Ado Ekiti</option>
+                <option value="Efon">Efon</option>
+                <option value="Ekiti East">Ekiti East</option>
+                <option value="Ekiti South-West">Ekiti South-West</option>
+                <option value="Ekiti West">Ekiti West</option>
+                <option value="Emure">Emure</option>
+                <option value="Gbonyin">Gbonyin</option>
+                <option value="Ido Osi">Ido Osi</option>
+                <option value="Ijero">Ijero</option>
+                <option value="Ikere">Ikere</option>
+                <option value="Ikole">Ikole</option>
+                <option value="Ilejemeje">Ilejemeje</option>
+                <option value="Irepodun Ifelodun">Irepodun Ifelodun</option>
+                <option value="Ise Orun">Ise Orun</option>
+                <option value="Moba">Moba</option>
+                <option value="Oye">Oye</option>
+                <option value="Aninri">Aninri</option>
+                <option value="Awgu">Awgu</option>
+                <option value="Enugu East">Enugu East</option>
+                <option value="Enugu North">Enugu North</option>
+                <option value="Enugu South">Enugu South</option>
+                <option value="Ezeagu">Ezeagu</option>
+                <option value="Igbo Etiti">Igbo Etiti</option>
+                <option value="Igbo Eze North">Igbo Eze North</option>
+                <option value="Igbo Eze South">Igbo Eze South</option>
+                <option value="Isi Uzo">Isi Uzo</option>
+                <option value="Nkanu East">Nkanu East</option>
+                <option value="Nkanu West">Nkanu West</option>
+                <option value="Nsukka">Nsukka</option>
+                <option value="Oji River">Oji River</option>
+                <option value="Udenu">Udenu</option>
+                <option value="Udi">Udi</option>
+                <option value="Uzo Uwani">Uzo Uwani</option>
+                <option value="Abaji">Abaji</option>
+                <option value="Bwari">Bwari</option>
+                <option value="Gwagwalada">Gwagwalada</option>
+                <option value="Kuje">Kuje</option>
+                <option value="Kwali">Kwali</option>
+                <option value="Municipal Area Council">Municipal Area Council</option>
+                <option value="Akko">Akko</option>
+                <option value="Balanga">Balanga</option>
+                <option value="Billiri">Billiri</option>
+                <option value="Dukku">Dukku</option>
+                <option value="Funakaye">Funakaye</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Kaltungo">Kaltungo</option>
+                <option value="Kwami">Kwami</option>
+                <option value="Nafada">Nafada</option>
+                <option value="Shongom">Shongom</option>
+                <option value="Yamaltu Deba">Yamaltu Deba</option>
+                <option value="Aboh Mbaise">Aboh Mbaise</option>
+                <option value="Ahiazu Mbaise">Ahiazu Mbaise</option>
+                <option value="Ehime Mbano">Ehime Mbano</option>
+                <option value="Ezinihitte">Ezinihitte</option>
+                <option value="Ideato North">Ideato North</option>
+                <option value="Ideato South">Ideato South</option>
+                <option value="Ihitte Uboma">Ihitte Uboma</option>
+                <option value="Ikeduru">Ikeduru</option>
+                <option value="Isiala Mbano">Isiala Mbano</option>
+                <option value="Isu">Isu</option>
+                <option value="Mbaitoli">Mbaitoli</option>
+                <option value="Ngor Okpala">Ngor Okpala</option>
+                <option value="Njaba">Njaba</option>
+                <option value="Nkwerre">Nkwerre</option>
+                <option value="Nwangele">Nwangele</option>
+                <option value="Obowo">Obowo</option>
+                <option value="Oguta">Oguta</option>
+                <option value="Ohaji Egbema">Ohaji Egbema</option>
+                <option value="Okigwe">Okigwe</option>
+                <option value="Orlu">Orlu</option>
+                <option value="Orsu">Orsu</option>
+                <option value="Oru East">Oru East</option>
+                <option value="Oru West">Oru West</option>
+                <option value="Owerri Municipal">Owerri Municipal</option>
+                <option value="Owerri North">Owerri North</option>
+                <option value="Owerri West">Owerri West</option>
+                <option value="Unuimo">Unuimo</option>
+                <option value="Auyo">Auyo</option>
+                <option value="Babura">Babura</option>
+                <option value="Biriniwa">Biriniwa</option>
+                <option value="Birnin Kudu">Birnin Kudu</option>
+                <option value="Buji">Buji</option>
+                <option value="Dutse">Dutse</option>
+                <option value="Gagarawa">Gagarawa</option>
+                <option value="Garki">Garki</option>
+                <option value="Gumel">Gumel</option>
+                <option value="Guri">Guri</option>
+                <option value="Gwaram">Gwaram</option>
+                <option value="Gwiwa">Gwiwa</option>
+                <option value="Hadejia">Hadejia</option>
+                <option value="Jahun">Jahun</option>
+                <option value="Kafin Hausa">Kafin Hausa</option>
+                <option value="Kazaure">Kazaure</option>
+                <option value="Kiri Kasama">Kiri Kasama</option>
+                <option value="Kiyawa">Kiyawa</option>
+                <option value="Kaugama">Kaugama</option>
+                <option value="Maigatari">Maigatari</option>
+                <option value="Malam Madori">Malam Madori</option>
+                <option value="Miga">Miga</option>
+                <option value="Ringim">Ringim</option>
+                <option value="Roni">Roni</option>
+                <option value="Sule Tankarkar">Sule Tankarkar</option>
+                <option value="Taura">Taura</option>
+                <option value="Yankwashi">Yankwashi</option>
+                <option value="Birnin Gwari">Birnin Gwari</option>
+                <option value="Chikun">Chikun</option>
+                <option value="Giwa">Giwa</option>
+                <option value="Igabi">Igabi</option>
+                <option value="Ikara">Ikara</option>
+                <option value="Jaba">Jaba</option>
+                <option value="Jema a">Jema a</option>
+                <option value="Kachia">Kachia</option>
+                <option value="Kaduna North">Kaduna North</option>
+                <option value="Kaduna South">Kaduna South</option>
+                <option value="Kagarko">Kagarko</option>
+                <option value="Kajuru">Kajuru</option>
+                <option value="Kaura">Kaura</option>
+                <option value="Kauru">Kauru</option>
+                <option value="Kubau">Kubau</option>
+                <option value="Kudan">Kudan</option>
+                <option value="Lere">Lere</option>
+                <option value="Makarfi">Makarfi</option>
+                <option value="Sabon Gari">Sabon Gari</option>
+                <option value="Sanga">Sanga</option>
+                <option value="Soba">Soba</option>
+                <option value="Zangon Kataf">Zangon Kataf</option>
+                <option value="Zaria">Zaria</option>
+                <option value="Ajingi">Ajingi</option>
+                <option value="Albasu">Albasu</option>
+                <option value="Bagwai">Bagwai</option>
+                <option value="Bebeji">Bebeji</option>
+                <option value="Bichi">Bichi</option>
+                <option value="Bunkure">Bunkure</option>
+                <option value="Dala">Dala</option>
+                <option value="Dambatta">Dambatta</option>
+                <option value="Dawakin Kudu">Dawakin Kudu</option>
+                <option value="Dawakin Tofa">Dawakin Tofa</option>
+                <option value="Doguwa">Doguwa</option>
+                <option value="Fagge">Fagge</option>
+                <option value="Gabasawa">Gabasawa</option>
+                <option value="Garko">Garko</option>
+                <option value="Garun Mallam">Garun Mallam</option>
+                <option value="Gaya">Gaya</option>
+                <option value="Gezawa">Gezawa</option>
+                <option value="Gwale">Gwale</option>
+                <option value="Gwarzo">Gwarzo</option>
+                <option value="Kabo">Kabo</option>
+                <option value="Kano Municipal">Kano Municipal</option>
+                <option value="Karaye">Karaye</option>
+                <option value="Kibiya">Kibiya</option>
+                <option value="Kiru">Kiru</option>
+                <option value="Kumbotso">Kumbotso</option>
+                <option value="Kunchi">Kunchi</option>
+                <option value="Kura">Kura</option>
+                <option value="Madobi">Madobi</option>
+                <option value="Makoda">Makoda</option>
+                <option value="Minjibir">Minjibir</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Rano">Rano</option>
+                <option value="Rimin Gado">Rimin Gado</option>
+                <option value="Rogo">Rogo</option>
+                <option value="Shanono">Shanono</option>
+                <option value="Sumaila">Sumaila</option>
+                <option value="Takai">Takai</option>
+                <option value="Tarauni">Tarauni</option>
+                <option value="Tofa">Tofa</option>
+                <option value="Tsanyawa">Tsanyawa</option>
+                <option value="Tudun Wada">Tudun Wada</option>
+                <option value="Ungogo">Ungogo</option>
+                <option value="Warawa">Warawa</option>
+                <option value="Wudil">Wudil</option>
+                <option value="Bakori">Bakori</option>
+                <option value="Batagarawa">Batagarawa</option>
+                <option value="Batsari">Batsari</option>
+                <option value="Baure">Baure</option>
+                <option value="Bindawa">Bindawa</option>
+                <option value="Charanchi">Charanchi</option>
+                <option value="Dandume">Dandume</option>
+                <option value="Danja">Danja</option>
+                <option value="Dan Musa">Dan Musa</option>
+                <option value="Daura">Daura</option>
+                <option value="Dutsi">Dutsi</option>
+                <option value="Dutsin Ma">Dutsin Ma</option>
+                <option value="Faskari">Faskari</option>
+                <option value="Funtua">Funtua</option>
+                <option value="Ingawa">Ingawa</option>
+                <option value="Jibia">Jibia</option>
+                <option value="Kafur">Kafur</option>
+                <option value="Kaita">Kaita</option>
+                <option value="Kankara">Kankara</option>
+                <option value="Kankia">Kankia</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kurfi">Kurfi</option>
+                <option value="Kusada">Kusada</option>
+                <option value="Mai Adua">Mai Adua</option>
+                <option value="Malumfashi">Malumfashi</option>
+                <option value="Mani">Mani</option>
+                <option value="Mashi">Mashi</option>
+                <option value="Matazu">Matazu</option>
+                <option value="Musawa">Musawa</option>
+                <option value="Rimi">Rimi</option>
+                <option value="Sabuwa">Sabuwa</option>
+                <option value="Safana">Safana</option>
+                <option value="Sandamu">Sandamu</option>
+                <option value="Zango">Zango</option>
+                <option value="Aleiro">Aleiro</option>
+                <option value="Arewa Dandi">Arewa Dandi</option>
+                <option value="Argungu">Argungu</option>
+                <option value="Augie">Augie</option>
+                <option value="Bagudo">Bagudo</option>
+                <option value="Birnin Kebbi">Birnin Kebbi</option>
+                <option value="Bunza">Bunza</option>
+                <option value="Dandi">Dandi</option>
+                <option value="Fakai">Fakai</option>
+                <option value="Gwandu">Gwandu</option>
+                <option value="Jega">Jega</option>
+                <option value="Kalgo">Kalgo</option>
+                <option value="Koko Besse">Koko Besse</option>
+                <option value="Maiyama">Maiyama</option>
+                <option value="Ngaski">Ngaski</option>
+                <option value="Sakaba">Sakaba</option>
+                <option value="Shanga">Shanga</option>
+                <option value="Suru">Suru</option>
+                <option value="Wasagu Danko">Wasagu Danko</option>
+                <option value="Yauri">Yauri</option>
+                <option value="Zuru">Zuru</option>
+                <option value="Adavi">Adavi</option>
+                <option value="Ajaokuta">Ajaokuta</option>
+                <option value="Ankpa">Ankpa</option>
+                <option value="Bassa">Bassa</option>
+                <option value="Dekina">Dekina</option>
+                <option value="Ibaji">Ibaji</option>
+                <option value="Idah">Idah</option>
+                <option value="Igalamela Odolu">Igalamela Odolu</option>
+                <option value="Ijumu">Ijumu</option>
+                <option value="Kabba Bunu">Kabba Bunu</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Lokoja">Lokoja</option>
+                <option value="Mopa Muro">Mopa Muro</option>
+                <option value="Ofu">Ofu</option>
+                <option value="Ogori Magongo">Ogori Magongo</option>
+                <option value="Okehi">Okehi</option>
+                <option value="Okene">Okene</option>
+                <option value="Olamaboro">Olamaboro</option>
+                <option value="Omala">Omala</option>
+                <option value="Yagba East">Yagba East</option>
+                <option value="Yagba West">Yagba West</option>
+                <option value="Asa">Asa</option>
+                <option value="Baruten">Baruten</option>
+                <option value="Edu">Edu</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Ifelodun">Ifelodun</option>
+                <option value="Ilorin East">Ilorin East</option>
+                <option value="Ilorin South">Ilorin South</option>
+                <option value="Ilorin West">Ilorin West</option>
+                <option value="Irepodun">Irepodun</option>
+                <option value="Isin">Isin</option>
+                <option value="Kaiama">Kaiama</option>
+                <option value="Moro">Moro</option>
+                <option value="Offa">Offa</option>
+                <option value="Oke Ero">Oke Ero</option>
+                <option value="Oyun">Oyun</option>
+                <option value="Pategi">Pategi</option>
+                <option value="Agege">Agege</option>
+                <option value="Ajeromi-Ifelodun">Ajeromi-Ifelodun</option>
+                <option value="Alimosho">Alimosho</option>
+                <option value="Amuwo-Odofin">Amuwo-Odofin</option>
+                <option value="Apapa">Apapa</option>
+                <option value="Badagry">Badagry</option>
+                <option value="Epe">Epe</option>
+                <option value="Eti Osa">Eti Osa</option>
+                <option value="Ibeju-Lekki">Ibeju-Lekki</option>
+                <option value="Ifako-Ijaiye">Ifako-Ijaiye</option>
+                <option value="Ikeja">Ikeja</option>
+                <option value="Ikorodu">Ikorodu</option>
+                <option value="Island">Island</option>
+                <option value="Kosofe">Kosofe</option>
+                <option value="Mainland">Mainland</option>
+                <option value="Mushin">Mushin</option>
+                <option value="Ojo">Ojo</option>
+                <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+                <option value="Shomolu">Shomolu</option>
+                <option value="Surulere">Surulere</option>
+                <option value="Akwanga">Akwanga</option>
+                <option value="Awe">Awe</option>
+                <option value="Doma">Doma</option>
+                <option value="Karu">Karu</option>
+                <option value="Keana">Keana</option>
+                <option value="Keffi">Keffi</option>
+                <option value="Kokona">Kokona</option>
+                <option value="Lafia">Lafia</option>
+                <option value="Nasarawa Egon">Nasarawa Egon</option>
+                <option value="Toto">Toto</option>
+                <option value="Wamba">Wamba</option>
+                <option value="Agaie">Agaie</option>
+                <option value="Agwara">Agwara</option>
+                <option value="Bida">Bida</option>
+                <option value="Borgu">Borgu</option>
+                <option value="Bosso">Bosso</option>
+                <option value="Chanchaga">Chanchaga</option>
+                <option value="Edati">Edati</option>
+                <option value="Gbako">Gbako</option>
+                <option value="Gurara">Gurara</option>
+                <option value="Katcha">Katcha</option>
+                <option value="Kontagora">Kontagora</option>
+                <option value="Lapai">Lapai</option>
+                <option value="Lavun">Lavun</option>
+                <option value="Magama">Magama</option>
+                <option value="Mariga">Mariga</option>
+                <option value="Mashegu">Mashegu</option>
+                <option value="Mokwa">Mokwa</option>
+                <option value="Moya">Moya</option>
+                <option value="Paikoro">Paikoro</option>
+                <option value="Rafi">Rafi</option>
+                <option value="Rijau">Rijau</option>
+                <option value="Shiroro">Shiroro</option>
+                <option value="Suleja">Suleja</option>
+                <option value="Tafa">Tafa</option>
+                <option value="Wushishi">Wushishi</option>
+                <option value="Abeokuta North">Abeokuta North</option>
+                <option value="Abeokuta South">Abeokuta South</option>
+                <option value="Ado-Odo Ota">Ado-Odo Ota</option>
+                <option value="Egbado North">Egbado North</option>
+                <option value="Egbado South">Egbado South</option>
+                <option value="Ewekoro">Ewekoro</option>
+                <option value="Ifo">Ifo</option>
+                <option value="Ijebu East">Ijebu East</option>
+                <option value="Ijebu North">Ijebu North</option>
+                <option value="Ijebu North East">Ijebu North East</option>
+                <option value="Ijebu Ode">Ijebu Ode</option>
+                <option value="Ikenne">Ikenne</option>
+                <option value="Imeko Afon">Imeko Afon</option>
+                <option value="Ipokia">Ipokia</option>
+                <option value="Obafemi Owode">Obafemi Owode</option>
+                <option value="Odeda">Odeda</option>
+                <option value="Odogbolu">Odogbolu</option>
+                <option value="Ogun Waterside">Ogun Waterside</option>
+                <option value="Remo North">Remo North</option>
+                <option value="Shagamu">Shagamu</option>
+                <option value="Akoko North-East">Akoko North-East</option>
+                <option value="Akoko North-West">Akoko North-West</option>
+                <option value="Akoko South-West">Akoko South-West</option>
+                <option value="Akoko South-East">Akoko South-East</option>
+                <option value="Akure North">Akure North</option>
+                <option value="Akure South">Akure South</option>
+                <option value="Ese Odo">Ese Odo</option>
+                <option value="Idanre">Idanre</option>
+                <option value="Ifedore">Ifedore</option>
+                <option value="Ilaje">Ilaje</option>
+                <option value="Ile Oluji Okeigbo">Ile Oluji Okeigbo</option>
+                <option value="Irele">Irele</option>
+                <option value="Odigbo">Odigbo</option>
+                <option value="Okitipupa">Okitipupa</option>
+                <option value="Ondo East">Ondo East</option>
+                <option value="Ondo West">Ondo West</option>
+                <option value="Ose">Ose</option>
+                <option value="Owo">Owo</option>
+                <option value="Atakunmosa East">Atakunmosa East</option>
+                <option value="Atakunmosa West">Atakunmosa West</option>
+                <option value="Aiyedaade">Aiyedaade</option>
+                <option value="Aiyedire">Aiyedire</option>
+                <option value="Boluwaduro">Boluwaduro</option>
+                <option value="Boripe">Boripe</option>
+                <option value="Ede North">Ede North</option>
+                <option value="Ede South">Ede South</option>
+                <option value="Ife Central">Ife Central</option>
+                <option value="Ife East">Ife East</option>
+                <option value="Ife North">Ife North</option>
+                <option value="Ife South">Ife South</option>
+                <option value="Egbedore">Egbedore</option>
+                <option value="Ejigbo">Ejigbo</option>
+                <option value="Ifedayo">Ifedayo</option>
+                <option value="Ila">Ila</option>
+                <option value="Ilesa East">Ilesa East</option>
+                <option value="Ilesa West">Ilesa West</option>
+                <option value="Irewole">Irewole</option>
+                <option value="Isokan">Isokan</option>
+                <option value="Iwo">Iwo</option>
+                <option value="Obokun">Obokun</option>
+                <option value="Odo Otin">Odo Otin</option>
+                <option value="Ola Oluwa">Ola Oluwa</option>
+                <option value="Olorunda">Olorunda</option>
+                <option value="Oriade">Oriade</option>
+                <option value="Orolu">Orolu</option>
+                <option value="Osogbo">Osogbo</option>
+                <option value="Afijio">Afijio</option>
+                <option value="Akinyele">Akinyele</option>
+                <option value="Atiba">Atiba</option>
+                <option value="Atisbo">Atisbo</option>
+                <option value="Egbeda">Egbeda</option>
+                <option value="Ibadan North">Ibadan North</option>
+                <option value="Ibadan North-East">Ibadan North-East</option>
+                <option value="Ibadan North-West">Ibadan North-West</option>
+                <option value="Ibadan South-East">Ibadan South-East</option>
+                <option value="Ibadan South-West">Ibadan South-West</option>
+                <option value="Ibarapa Central">Ibarapa Central</option>
+                <option value="Ibarapa East">Ibarapa East</option>
+                <option value="Ibarapa North">Ibarapa North</option>
+                <option value="Ido">Ido</option>
+                <option value="Irepo">Irepo</option>
+                <option value="Iseyin">Iseyin</option>
+                <option value="Itesiwaju">Itesiwaju</option>
+                <option value="Iwajowa">Iwajowa</option>
+                <option value="Kajola">Kajola</option>
+                <option value="Lagelu">Lagelu</option>
+                <option value="Ogbomosho North">Ogbomosho North</option>
+                <option value="Ogbomosho South">Ogbomosho South</option>
+                <option value="Ogo Oluwa">Ogo Oluwa</option>
+                <option value="Olorunsogo">Olorunsogo</option>
+                <option value="Oluyole">Oluyole</option>
+                <option value="Ona Ara">Ona Ara</option>
+                <option value="Orelope">Orelope</option>
+                <option value="Ori Ire">Ori Ire</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Oyo East">Oyo East</option>
+                <option value="Saki East">Saki East</option>
+                <option value="Saki West">Saki West</option>
+                <option value="Bokkos">Bokkos</option>
+                <option value="Barkin Ladi">Barkin Ladi</option>
+                <option value="Jos East">Jos East</option>
+                <option value="Jos North">Jos North</option>
+                <option value="Jos South">Jos South</option>
+                <option value="Kanam">Kanam</option>
+                <option value="Kanke">Kanke</option>
+                <option value="Langtang South">Langtang South</option>
+                <option value="Langtang North">Langtang North</option>
+                <option value="Mangu">Mangu</option>
+                <option value="Mikang">Mikang</option>
+                <option value="Pankshin">Pankshin</option>
+                <option value="Qua an Pan">Qua an Pan</option>
+                <option value="Riyom">Riyom</option>
+                <option value="Shendam">Shendam</option>
+                <option value="Wase">Wase</option>
+                <option value="Abua Odual">Abua Odual</option>
+                <option value="Ahoada East">Ahoada East</option>
+                <option value="Ahoada West">Ahoada West</option>
+                <option value="Akuku-Toru">Akuku-Toru</option>
+                <option value="Andoni">Andoni</option>
+                <option value="Asari-Toru">Asari-Toru</option>
+                <option value="Bonny">Bonny</option>
+                <option value="Degema">Degema</option>
+                <option value="Eleme">Eleme</option>
+                <option value="Emuoha">Emuoha</option>
+                <option value="Etche">Etche</option>
+                <option value="Gokana">Gokana</option>
+                <option value="Ikwerre">Ikwerre</option>
+                <option value="Khana">Khana</option>
+                <option value="Obio Akpor">Obio Akpor</option>
+                <option value="Ogba Egbema Ndoni">Ogba Egbema Ndoni</option>
+                <option value="Ogu Bolo">Ogu Bolo</option>
+                <option value="Okrika">Okrika</option>
+                <option value="Omuma">Omuma</option>
+                <option value="Opobo Nkoro">Opobo Nkoro</option>
+                <option value="Oyigbo">Oyigbo</option>
+                <option value="Port Harcourt">Port Harcourt</option>
+                <option value="Tai">Tai</option>
+                <option value="Binji">Binji</option>
+                <option value="Bodinga">Bodinga</option>
+                <option value="Dange Shuni">Dange Shuni</option>
+                <option value="Gada">Gada</option>
+                <option value="Goronyo">Goronyo</option>
+                <option value="Gudu">Gudu</option>
+                <option value="Gwadabawa">Gwadabawa</option>
+                <option value="Illela">Illela</option>
+                <option value="Isa">Isa</option>
+                <option value="Kebbe">Kebbe</option>
+                <option value="Kware">Kware</option>
+                <option value="Rabah">Rabah</option>
+                <option value="Sabon Birni">Sabon Birni</option>
+                <option value="Shagari">Shagari</option>
+                <option value="Silame">Silame</option>
+                <option value="Sokoto North">Sokoto North</option>
+                <option value="Sokoto South">Sokoto South</option>
+                <option value="Tambuwal">Tambuwal</option>
+                <option value="Tangaza">Tangaza</option>
+                <option value="Tureta">Tureta</option>
+                <option value="Wamako">Wamako</option>
+                <option value="Wurno">Wurno</option>
+                <option value="Yabo">Yabo</option>
+                <option value="Ardo Kola">Ardo Kola</option>
+                <option value="Bali">Bali</option>
+                <option value="Donga">Donga</option>
+                <option value="Gashaka">Gashaka</option>
+                <option value="Gassol">Gassol</option>
+                <option value="Ibi">Ibi</option>
+                <option value="Jalingo">Jalingo</option>
+                <option value="Karim Lamido">Karim Lamido</option>
+                <option value="Kumi">Kumi</option>
+                <option value="Lau">Lau</option>
+                <option value="Sardauna">Sardauna</option>
+                <option value="Takum">Takum</option>
+                <option value="Ussa">Ussa</option>
+                <option value="Wukari">Wukari</option>
+                <option value="Yorro">Yorro</option>
+                <option value="Zing">Zing</option>
+                <option value="Bade">Bade</option>
+                <option value="Bursari">Bursari</option>
+                <option value="Damaturu">Damaturu</option>
+                <option value="Fika">Fika</option>
+                <option value="Fune">Fune</option>
+                <option value="Geidam">Geidam</option>
+                <option value="Gujba">Gujba</option>
+                <option value="Gulani">Gulani</option>
+                <option value="Jakusko">Jakusko</option>
+                <option value="Karasuwa">Karasuwa</option>
+                <option value="Machina">Machina</option>
+                <option value="Nangere">Nangere</option>
+                <option value="Nguru">Nguru</option>
+                <option value="Potiskum">Potiskum</option>
+                <option value="Tarmuwa">Tarmuwa</option>
+                <option value="Yunusari">Yunusari</option>
+                <option value="Yusufari">Yusufari</option>
+                <option value="Anka">Anka</option>
+                <option value="Bakura">Bakura</option>
+                <option value="Birnin Magaji Kiyaw">Birnin Magaji Kiyaw</option>
+                <option value="Bukkuyum">Bukkuyum</option>
+                <option value="Bungudu">Bungudu</option>
+                <option value="Gummi">Gummi</option>
+                <option value="Gusau">Gusau</option>
+                <option value="Kaura Namoda">Kaura Namoda</option>
+                <option value="Maradun">Maradun</option>
+                <option value="Maru">Maru</option>
+                <option value="Shinkafi">Shinkafi</option>
+                <option value="Talata Mafara">Talata Mafara</option>
+                <option value="Chafe">Chafe</option>
+                <option value="Zurmi">Zurmi</option>
+            </select>
+        </div>
+		<div class="form-group">
+			<label for="referralchannel">Referral Channel:</label><br>
+            <select name="referralchannel" value="" class="form-control manfieldbdr" onchange="setDependent(this, false)" id="CASECF5">
+                <option value="">- Please choose -</option>
+                <option value="Radio">Radio</option>
+                <option value="TV">TV</option>
+                <option value="Newspapers / Magazines">Newspapers / Magazines</option>
+                <option value="Billboard">Billboard</option>
+                <option value="Bus / Tricycle branding">Bus / Tricycle branding</option>
+                <option value="Facebook">Facebook</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Instagram">Instagram</option>
+                <option value="YouTube">YouTube</option>
+                <option value="Email">Email</option>
+                <option value="Employee">Employee</option>
+                <option value="Agent">Agent</option>
+                <option value="Other Online Adds">Other Online Adds</option>
+            </select>
+        </div>
+		<div class="form-group">
+			<label for="referrercode">
+			    <i class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="" data-original-title="Referral Shop ID should be Numeric, example: 123456"></i> Referral Shop ID:</label>
+			<input type="number" class="form-control" id="referrercode" name="referrercode" placeholder="Enter referrer Shop ID">
+        </div>
+        <!--
+		<div class="form-group">
+			<label for="subject">Subject:</label>
+			<input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="checkbox">
+            <label class="form-check-label" name="checkbox" for="checkbox" value="yes">Agent Registration Form</label>
+        </div>
+        -->
+    </div>
+    <!-- RIGHT BOX -->
+    <div class="clearfix"></div>
+    <!-- UPLOAD BOX -->
+    <div class="col-md-12 upload-box">
+        <hr>
+        <div class="col-sm-4 col-md-4 col-lg-4 disclamer-box">
+            <p class="upload-disclamer-headline">Shop photos</p>
+            <p class="upload-disclamer-text">Each of your file(s) can be up to 12MB in size.</p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <p class="upload-info">OutDoor photo</p>
+            <div class="input-container">
+                <input type="file" id="real-input1" name="attach1" accept="image/*, application/pdf">
+                <div class="browse-btn1">Attach file</div>
+                <span class="file-info1"></span>
+            </div>
+            <p id="custom-upload-error1" class="custom-upload-error1">Out-door photo must be uploaded</p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <p class="upload-info">InDoor photo</p>
+            <div class="input-container">
+                <input type="file" id="real-input2" name="attach2" accept="image/*, application/pdf">
+                <div class="browse-btn2">Attach file</div>
+                <span class="file-info2"></span>
+            </div>
+            <p id="custom-upload-error2" class="custom-upload-error2">In-door photo must be uploaded</p>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="g-recaptcha" data-sitekey="6LeAUngaAAAAAMoQOajX1cLXi0z6_ip6ddnvuDjc" data-callback="verifyCaptcha"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="./anchor.html" width="304" height="78" role="presentation" name="a-m8nevqgoyie4" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./saved_resource(2).html"></iframe></div>
+    <div id="g-recaptcha-error"></div>
+        
+    </div>
+    <!-- UPLOAD BOX -->
+    
+        <div class="clearfix"><br clear="all" <="" div="">
+        <hr>
+    <!-- BTN BOX -->
+    <div class="col-md-12 btn-box">
+        <div class="col-sm-6 text-left">
+            <input type="reset" value="Reset" class="reset-btn">
+        </div>
+        <div class="col-sm-6 text-right">
+            <input type="submit" id="submit" name="submit" value="Submit" class="submit-btn">
+        </div>
+    </div>
+    <!-- BTN BOX -->
+    
+</div></form>
+
+
+<!-- JavaScript -->
+<script src="./jquery-1.11.3.min.js"></script>
+<script src="./jquery-ui.js"></script>
+<script src="./bootstrap.min.js"></script>
+<script src="./jquery.validate.js"></script>
+<script src="./additional-methods.min.js"></script>
+<script src="./jquery.mask.js"></script>
+<script>
+    const uploadButton1 = document.querySelector('.browse-btn1');
+    const uploadButton2 = document.querySelector('.browse-btn2');
+    const fileInfo1 = document.querySelector('.file-info1');
+    const fileInfo2 = document.querySelector('.file-info2');
+    const realInput1 = document.getElementById('real-input1');
+    const realInput2 = document.getElementById('real-input2');
+    uploadButton1.addEventListener('click', (e) => { realInput1.click(); });
+    uploadButton2.addEventListener('click', (e) => { realInput2.click(); });
+    realInput1.addEventListener('change', () => {
+        const name = realInput1.value.split(/\\|\//).pop();
+        const truncated = name.length > 20 
+            ? name.substr(name.length - 20) 
+            : name;        
+        fileInfo1.innerHTML = truncated;
+    });
+    realInput2.addEventListener('change', () => {
+        const name = realInput2.value.split(/\\|\//).pop();
+        const truncated = name.length > 20 
+            ? name.substr(name.length - 20) 
+            : name;        
+        fileInfo2.innerHTML = truncated;
+    });
+
+    /*document.getElementById("submit").onclick = function fun() {
+        var up1 = document.getElementById("real-input1");
+        var up2 = document.getElementById("real-input2");
+        if(up1.value.length === 0) {
+            document.getElementById("custom-upload-error1").classList.add("custom-visible");
+        } else {
+            document.getElementById("custom-upload-error1").classList.remove("custom-visible");
+        }
+        if(up2.value.length === 0) {
+            document.getElementById("custom-upload-error2").classList.add("custom-visible");
+        } else {
+            document.getElementById("custom-upload-error2").classList.remove("custom-visible");
+        }
+    }*/
+</script>
+<script>
+$(function () { $('[data-toggle="tooltip"]').tooltip() })
+$.validator.addMethod("alphabetsnspace", function(value, element) {
+    return this.optional(element) || value == value.match(/^[a-zA-Z0-9 ]*$/);
+});
+$.validator.addMethod("customemail", function(value, element) {
+    return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.(com|ng|co\.(in|uk)|me|org|net|edu|gov|info)$/.test(value);
+});
+$("#zsWebToCase_222550000020802179").validate({
+    rules: {
+        fname: {
+            required: true,
+            minlength: 3,
+            maxlength: 40,
+            alphabetsnspace: true
+        },
+        lname: {
+            required: true,
+            minlength: 3,
+            maxlength: 40,
+            alphabetsnspace: true
+        },
+        email: {
+            required: true,
+            email: true,
+            customemail: true
+
+        },
+        mobilephone: {
+            required: true,
+            rangelength: [17, 17]
+        },
+        shopaddress: "required"
+        //attach1: "required",
+        //attach2: "required"
+
+    },
+    messages: {
+        fname: {
+            required: "Please enter your first name",
+            minlength: "Your first name must be at least 3 characters long",
+            maxlength: "Your first name must be longer than 40 characters",
+            accept: "You can enter only letters",
+            alphabetsnspace: "You can enter only letters and numbers"
+        },
+        lname: {
+            required: "Please enter your last name",
+            minlength: "Your last name must be at least 3 characters long",
+            maxlength: "Your last name must be longer than 40 characters",
+            alphabetsnspace: "You can enter only letters and numbers"
+        },
+        email: {
+            required: "Please enter your email address",
+            email: "Email Address not is not in correct format",
+            customemail: "Email addres in not in correct format"
+        },
+        mobilephone: {
+            required: "Please enter your phone number",
+            rangelength: "Your phone number must be exactly 14 digit long"
+        },
+        shopstate: {
+            required: "Please choose Shop State"
+        },
+        lga: {
+            required: "Please choose LGA (Local Government Area)"
+            
+        },
+        shopaddress: "Please enter shop address"
+        //attach1: "Please attach file",
+        //attach2: "Please attach file"
+
+    },
+	//submitHandler: function (form) {
+        //console.log('submit');
+        //$('.submit-btn').prop('disabled',true);
+        //$('.submit-btn').addClass( "submit-btn-disabled" );
+        //form.submit();
+	//}
+});
+$(document).ready(function(){
+    $('.phone').mask('+ABC D00 000 0000', {
+    translation: {
+      'A': { pattern: /[2-2]/ },
+      'B': { pattern: /[3-3]/ },
+      'C': { pattern: /[4-4]/ },
+      'D': { pattern: /[1-9]/ },
+      
+    }});
+});
+$("#birthdate").datepicker({
+    changeMonth:!0,
+    changeYear:!0,
+    minDate: '-80Y',
+    maxDate: '-18Y',
+    yearRange:"-100:+0",
+    dateFormat:"dd.mm.yy"
+});
+
+
+
+
+</script>
+
+
+</div><script type="text/javascript" id="" src="./saved_resource"></script><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes" src="./bframe.html" name="c-m8nevqgoyie4" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><script id="kumulos" src="./optimove-web-bundle.js" async=""></script>
+<script type="text/javascript" id="">dataLayer.push({event:"get_sdk_id"});dataLayer.push({event:"page_visit"});</script><script type="text/javascript" id="">google_tag_manager["GTM-T555QRZ"].macro(17)&&dataLayer.push({event:"set_user_id"});</script><script type="text/javascript" id="">optimoveSDK.API.setPageVisit(google_tag_manager["GTM-T555QRZ"].macro(21),google_tag_manager["GTM-T555QRZ"].macro(22),"");</script><div id="kumulos-ui-root"><div id="kumulos-ui-root-push"></div></div></body></html>
