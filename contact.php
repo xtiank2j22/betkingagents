@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" action="https://formsubmit.co/support@agentbetking.com">
+            <form role="form" action="https://formsubmit.co/support@betkingagents.com" method="post" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -52,7 +52,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center text-bold"><button type="submit" class="font-5">Send Message</button></div>
+              <div class="text-center text-bold"><button type="submit" class="font-5 btn btn-primary btn-lg">Send Message</button></div>
             </form>
           </div>
         </div>
