@@ -349,7 +349,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>support@betking-agent.com</p>
               </div>
               <div class="phone">
                 <i class="bi bi-phone"></i>

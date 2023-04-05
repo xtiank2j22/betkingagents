@@ -24,8 +24,11 @@
     padding: 10px 20px;
     background: #39ac31;
     margin: 20px 0;
-    display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
+    display: inline-block;
+  }
+	.contant_box_404{
+     margin-top:-50px;
+    }
 /*--------------------------------------------------------------
 # whatsap css by christian nwanagba
 --------------------------------------------------------------*/
@@ -78,6 +81,18 @@
 /*--------------------------------------------------------------
 # Gpersonal css
 --------------------------------------------------------------*/
+.ml2{
+  margin-left: -5%;
+  background-color: #031141;
+  color: white;
+  width: 50%;
+  font-size: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.ml2:hover{
+  background-color: #FFD64C !important;
+  color: #031141 !important;
+}
 .btn-box {
   overflow: hidden;
 }

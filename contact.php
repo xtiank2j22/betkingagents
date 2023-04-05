@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-            <form role="form" action="https://formsubmit.co/support@betkingagents.com" method="post" enctype="multipart/form-data">
+            <form role="form" action="https://formsubmit.co/support@betking-agent.com" method="POST" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
