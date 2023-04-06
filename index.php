@@ -359,7 +359,7 @@
             </div>
           </div>
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form role="form" action="https://formsubmit.co/support@betking-agent.com" method="post" enctype="multipart/form-data" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -384,7 +384,8 @@
           </div>
         </div>
       </div>
-    </section><!-- End Contact Section -->
+    </section>
+
   </main><!-- End #main -->
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta cta-desk">
