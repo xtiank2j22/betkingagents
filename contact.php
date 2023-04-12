@@ -50,13 +50,19 @@
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message"></div>
               </div>
-              <div class="text-center text-bold"><button type="submit" class="font-5 btn btn-primary btn-lg">Send Message</button></div>
+              <div class="text-center text-bold"><button type="submit" class="font-5 btn btn-primary btn-lg" data-bs-toggle="popover" data-bs-content="Message sent. Thank you for contacting us!">Send Message</button></div>
             </form>
           </div>
         </div>
       </div>
     </section><!-- End Contact Section -->
+    <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
 	 <!--===== footer and js links --=====-->
 	 <?php include_once 'include/footer.php'; ?>
